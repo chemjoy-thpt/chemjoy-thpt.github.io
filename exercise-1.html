@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+    
+    <!-- Link tới file CSS chung của hệ thống -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- CẤU HÌNH THƯ VIỆN LATEX (MATHJAX V3) -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* ==========================================================================
+           CSS CHUYÊN BIỆT CHO TRANG BÀI TẬP (Giao diện tinh chỉnh chuẩn "OCD")
+           ========================================================================== */
+        body {
+            background-color: #f6f8fa;
+        }
+
+        .exercise-container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Khung nội dung chính */
+        .context-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .question-block {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e1e8ed;
+            position: relative;
+        }
+
+        .tag-vdc {
+            position: absolute;
+            top: -12px;
+            right: 25px;
+            background: #ff4757;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
+        }
+
+        .formula-display-box {
+            background: #f8f9fa;
+            border-left: 4px solid #a4b0be;
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        /* Hệ thống nút cốt lõi */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn-main {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .btn-hint-trigger {
+            background-color: #fff9db;
+            color: #f59f00;
+            border: 1px solid #ffe066;
+        }
+        .btn-hint-trigger:hover {
+            background-color: #ffe066;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(245, 159, 0, 0.15);
+        }
+
+        .btn-answer-trigger {
+            background-color: #e7f5ff;
+            color: #228be6;
+            border: 1px solid #a5d8ff;
+        }
+        .btn-answer-trigger:hover {
+            background-color: #a5d8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(34, 139, 230, 0.15);
+        }
+
+        /* Khung chứa các phần tương tác ẩn hiện */
+        .interactive-box {
+            display: none;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid #e1e8ed;
+            animation: slideDown 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gợi ý phân bậc tầng nấc */
+        .hint-step-item {
+            display: none;
+            padding: 15px 20px;
+            background: #fffbf0;
+            border-left: 4px solid #f59f00;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            animation: fadeIn 0.3s ease;
+        }
+        .hint-step-item.active {
+            display: block;
+        }
+        
+        .btn-next-hint {
+            background-color: #f59f00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-next-hint:hover { 
+            background-color: #e08e00;
+            transform: scale(1.02);
+        }
+
+        /* Khu vực Đáp án & Lời giải */
+        .answer-header {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2b8a3e;
+            background: #ebfbee;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px dashed #2b8a3e;
+            text-align: center;
+        }
+
+        .solution-step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .solution-step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.2s;
+        }
+        .solution-step:hover {
+            border-color: #cbd5e1;
+        }
+
+        .solution-text {
+            flex-grow: 1;
+            line-height: 1.7;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        /* Nút hỏi chấm xem giải thích bên cạnh từng bước */
+        .btn-query-step {
+            background: #ffffff;
+            color: #6366f1;
+            border: 1px solid #e2e8f0;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-query-step:hover {
+            background: #6366f1;
+            color: #ffffff;
+            border-color: #6366f1;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Bảng hiển thị Pop-up thông minh (Modal) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .modal-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 540px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes popUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px; right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #94a3b8;
+            border: none;
+            background: none;
+            transition: color 0.2s;
+        }
+        .close-modal:hover { color: #ef4444; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+
+        /* Định dạng tối ưu cho các thẻ MathJax đặt trong văn bản */
+        .MathJax {
+            font-size: 1em !important;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="tex2jax_ignore">
+
+    <!-- ĐỒNG BỘ NAVBAR CHUNG -->
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="exercise-container tex2jax_process">
+        
+                <!-- KHỐI ĐỀ BÀI -->
+        <div class="question-block">
+            <span class="tag-level tag-vdc">Vận dụng cao</span>
+            <h3 style="color: #1e293b; font-size: 1.15rem;"><i>Đề cương ôn kiểm tra học kỳ II, năm học 2025-2026 - THPT Nguyễn Việt Hồng, Cần Thơ</i></h3>
+            <p style="margin-top: 15px; text-align: justify;">Theo QCVN 01–1:2018/BYT, hàm lượng sắt tối đa cho phép trong nước sinh hoạt là $0,3\text{ mg/L}$. Một mẫu nước có hàm lượng sắt cao gấp $28$ lần ngưỡng cho phép, giả thiết sắt trong mẫu nước tồn tại ở dạng $\text{Fe}_2(\text{SO}_4)_3$ và $\text{FeSO}_4$ với tỉ lệ mol tương ứng là $1 : 8$. Quá trình tách loại sắt trong $10\text{ m}^3$ mẫu nước trên được thực hiện bằng cách sử dụng $m$ gam vôi tôi (vừa đủ) để tăng pH, sau đó sục không khí:</p>
+            
+            <div class="formula-display-box">
+                $\text{Fe}_2(\text{SO}_4)_3 + 3\text{Ca(OH)}_2 \rightarrow 2\text{Fe(OH)}_3\downarrow + 3\text{CaSO}_4\downarrow$ <span style="float:right;">(1)</span><br>
+                $4\text{FeSO}_4 + 4\text{Ca(OH)}_2 + \text{O}_2 + 2\text{H}_2\text{O} \rightarrow 4\text{Fe(OH)}_3\downarrow + 4\text{CaSO}_4\downarrow$ <span style="float:right;">(2)</span>
+            </div>
+            
+            <p><strong>Giá trị của $m$ là bao nhiêu gam?</strong> <em>(Làm tròn kết quả đến hàng đơn vị).</em></p>
+        </div>
+
+        <!-- KHU VỰC 2 NÚT ĐIỀU KHIỂN CHÍNH -->
+        <div class="action-buttons">
+            <button class="btn-main btn-hint-trigger" onclick="toggleMainSection('hintBox')">💡 Xem Gợi ý từng bước</button>
+            <button class="btn-main btn-answer-trigger" onclick="toggleMainSection('answerBox')">✅ Xem Đáp án & Lời giải</button>
+        </div>
+
+        <!-- KHỐI GỢI Ý PHÂN BẬC (Mở tuần tự tránh ngợp thông tin) -->
+        <div id="hintBox" class="interactive-box" style="border-top: 4px solid #f59f00;">
+            <h4 style="color: #e08e00; margin-bottom: 15px; font-size: 1.05rem;">🧬 Hướng dẫn tư duy phân bậc:</h4>
+            
+            <div id="hintStep1" class="hint-step-item active">
+                <strong>Gợi ý Bước 1:</strong> Phân tích nồng độ sắt thực tế dựa trên số lần vượt ngưỡng. Áp dụng công thức tính tổng khối lượng sắt $\text{(Fe)}$ có trong $10\text{ m}^3$ (tương đương $10.000\text{ L}$) nước, sau đó đổi ra tổng số mol $\text{Fe}$.
+            </div>
+            
+            <div id="hintStep2" class="hint-step-item">
+                <strong>Gợi ý Bước 2:</strong> Đặt ẩn số mol cho hỗn hợp ban đầu dựa trên tỉ lệ bài cho: Gọi số mol $\text{Fe}_2(\text{SO}_4)_3$ là $x\text{ mol} \rightarrow$ số mol $\text{FeSO}_4$ tương ứng là $8x\text{ mol}$. Hãy vận dụng định luật <em>Bảo toàn nguyên tố Sắt</em> để lập phương trình giải tìm ẩn $x$.
+            </div>
+            
+            <div id="hintStep3" class="hint-step-item">
+                <strong>Gợi ý Bước 3:</strong> Đừng tốn thời gian cân bằng hay tính toán theo từng phương trình đơn lẻ! Hãy chú ý: Toàn bộ nhóm sunfat $\text{SO}_4^{2-}$ trong hỗn hợp muối ban đầu sau phản ứng đều chuyển dịch trọn vẹn vào kết tủa $\text{CaSO}_4$. Sử dụng phương pháp <em>Bảo toàn nhóm nguyên tố $\text{SO}_4$</em> để suy ra trực tiếp số mol $\text{Ca(OH)}_2$ cần dùng.
+            </div>
+
+            <button id="btnNextHint" class="btn-next-hint" onclick="showNextHint()">Cần thêm gợi ý (Bước tiếp theo) &raquo;</button>
+        </div>
+
+        <!-- KHỐI ĐÁP ÁN VÀ LỜI GIẢI CHI TIẾT CHUẨN ĐẸP -->
+        <div id="answerBox" class="interactive-box" style="border-top: 4px solid #228be6;">
+            <div class="answer-header">🎯 ĐÁP ÁN ĐIỀN SỐ: $m = 122$</div>
+            
+            <h4 style="margin-bottom: 20px; color: #1e293b; font-size: 1.05rem;">✏️ Trình bày lời giải chi tiết:</h4>
+
+            <div class="solution-step-container">
+                <!-- Bước 1 -->
+                <div class="solution-step">
+                    <div class="solution-text">
+                        <strong>Bước 1: Khảo sát số liệu mẫu nước ban đầu</strong><br>
+                        • Nồng độ $\text{Fe}$ thực tế: $0,3 \times 28 = 8,4\text{ mg/L}$<br>
+                        • Đổi đơn vị thể tích: $10\text{ m}^3 = 10.000\text{ L}$<br>
+                        • Tổng số mol nguyên tố $\text{Fe}$ cần loại bỏ:<br>
+                        <div style="text-align: center; margin: 8px 0;">
+                            $n_{\text{Fe}} = \frac{8,4 \times 10.000}{1000 \times 56} = 1,5\text{ mol}$
+                        </div>
+                    </div>
+                    <button class="btn-query-step" onclick="openExplanation('step1')" title="Giải thích bản chất bước này">🔍</button>
+                </div>
+
+                <!-- Bước 2 -->
+                <div class="solution-step">
+                    <div class="solution-text">
+                        <strong>Bước 2: Tìm cấu trúc số mol hỗn hợp muối</strong><br>
+                        Theo tỉ lệ mol đề bài cho là $1 : 8$, ta thiết lập hệ ẩn:<br>
+                        Đặt $n_{\text{Fe}_2(\text{SO}_4)_3} = x\text{ mol} \implies n_{\text{FeSO}_4} = 8x\text{ mol}$<br>
+                        Áp dụng định luật bảo toàn nguyên tố $\text{Fe}$:<br>
+                        <div style="text-align: center; margin: 8px 0;">
+                            $2x + 8x = 1,5 \implies 10x = 1,5 \implies x = 0,15\text{ mol}$
+                        </div>
+                    </div>
+                    <button class="btn-query-step" onclick="openExplanation('step2')" title="Giải thích bản chất bước này">🔍</button>
+                </div>
+
+                <!-- Bước 3 -->
+                <div class="solution-step">
+                    <div class="solution-text">
+                        <strong>Bước 3: Tính toán lượng vôi tôi $\text{Ca(OH)}_2$ tiêu tốn</strong><br>
+                        Phân tích sơ đồ phản ứng, áp dụng bảo toàn nhóm $\text{SO}_4^{2-}$:<br>
+                        <div style="text-align: center; margin: 8px 0;">
+                            $n_{\text{Ca(OH)}_2} = n_{\text{CaSO}_4} = n_{\text{SO}_4} = 3x + 8x = 11x$
+                        </div>
+                        Thay giá trị ẩn vào: $n_{\text{Ca(OH)}_2} = 11 \times 0,15 = 1,65\text{ mol}$
+                    </div>
+                    <button class="btn-query-step" onclick="openExplanation('step3')" title="Giải thích bản chất bước này">🔍</button>
+                </div>
+
+                <!-- Bước 4 -->
+                <div class="solution-step">
+                    <div class="solution-text">
+                        <strong>Bước 4: Tính toán giá trị khối lượng và làm tròn</strong><br>
+                        Khối lượng vôi tôi tinh khiết cần cân là:<br>
+                        <div style="text-align: center; margin: 8px 0;">
+                            $m = 1,65 \times 74 = 122,1\text{ gam}$
+                        </div>
+                        Làm tròn kết quả đến hàng đơn vị theo đúng yêu cầu &rarr; <strong>m = 122</strong>
+                    </div>
+                    <button class="btn-query-step" onclick="openExplanation('step4')" title="Giải thích bản chất bước này">🔍</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- POP-UP GIẢI THÍCH SÂU (DYNAMIC MODAL CHUẨN TỶ LỆ) -->
+    <div id="explanationModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h3 id="modalTitle" style="color: #6366f1; margin-bottom: 15px; font-size: 1.15rem; font-weight: 700;">Tiêu đề</h3>
+            <p id="modalBody" style="color: #475569; line-height: 1.7; font-size: 0.95rem; text-align: justify;">Nội dung...</p>
+        </div>
+    </div>
+
+    <!-- ĐỒNG BỘ FOOTER CHUNG -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <!-- HỆ THỐNG SCRIPT XỬ LÝ LOGIC CHUYỂN ĐỔI -->
+    <script>
+        let currentHint = 1;
+        const totalHints = 3;
+
+        // Hàm bật/tắt khối lớn (Gợi ý / Lời giải) hoàn toàn độc lập
+        function toggleMainSection(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === "block") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+                // Đảm bảo MathJax quét và vẽ lại công thức thật đẹp khi khối vừa hiển thị
+                if (window.MathJax) {
+                    MathJax.typesetPromise([el]);
+                }
+            }
+        }
+
+        // Hàm xử lý mở từng nấc gợi ý khi bấm nút
+        function showNextHint() {
+            if (currentHint < totalHints) {
+                currentHint++;
+                const nextHintEl = document.getElementById(`hintStep${currentHint}`);
+                nextHintEl.classList.add('active');
+                
+                if (window.MathJax) {
+                    MathJax.typesetPromise([nextHintEl]);
+                }
+                
+                if (currentHint === totalHints) {
+                    document.getElementById('btnNextHint').style.display = 'none';
+                }
+            }
+        }
+
+        // Kho dữ liệu giải thích sâu cho từng bước (Có tích hợp cấu trúc ký tự LaTeX)
+        const explanationData = {
+            step1: {
+                title: "🔍 Tại sao cần tìm tổng số mol nguyên tố sắt trước?",
+                body: "Mục tiêu tối thượng của bài toán này là xác định lượng vôi tôi tiêu hao để kết tủa hết ion sắt độc hại. Vì sắt đang phân tán ở cả hai trạng thái muối hóa trị khác nhau là $\\text{Fe}^{3+}$ và $\\text{Fe}^{2+}$, việc gộp chung quy về tổng số mol nguyên tử $\\text{Fe}$ tự do ban đầu giúp ta nắm giữ được tổng lượng vật chất gốc, từ đó tạo nền móng vững chắc để phân chia tỷ lệ mol ở bước sau."
+            },
+            step2: {
+                title: "🔍 Bản chất cơ sở của phương trình $2x + 8x = 1,5$",
+                body: "Đây là ứng dụng trực tiếp của <b>Định luật bảo toàn nguyên tố Sắt</b>. Hãy để ý chỉ số số lượng:<br>• Trong $1$ phân tử $\\text{Fe}_2(\\text{SO}_4)_3$ chứa tới $\\mathbf{2}$ nguyên tử $\\text{Fe} \\rightarrow x\\text{ mol}$ muối này đóng góp $2x\\text{ mol Fe}$.<br>• Trong $1$ phân tử $\\text{FeSO}_4$ chỉ chứa $\\mathbf{1}$ nguyên tử $\\text{Fe} \\rightarrow 8x\\text{ mol}$ muối này đóng góp $8x\\text{ mol Fe}$.<br>Tổng lượng sắt giải phóng từ hai nguồn muối buộc phải bằng tổng số mol sắt thực tế có trong mẫu nước thải bẩn vừa tính ở bước 1 ($1,5\\text{ mol}$)."
+            },
+            step3: {
+                title: "🔍 Tại sao Bảo toàn nhóm $\\text{SO}_4^{2-}$ lại ưu việt hơn viết phương trình?",
+                body: "Nếu đi theo lối mòn tự luận truyền thống, bạn sẽ mất rất nhiều thời gian cân bằng hệ số oxi hóa khử phức tạp của phương trình (2). Cách đó vừa tốn thời gian nháp vừa dễ tính toán sai số.<br><br><b>Tư duy OCD đột phá:</b> Quan sát toàn cục sơ đồ chu trình phản ứng, toàn bộ gốc axit sunfat $\\text{SO}_4$ nằm ở các chất tham gia ban đầu đều chuyển dịch sạch sẽ vào kết tủa muối sunfat mới là $\\text{CaSO}_4$. Mà toàn bộ lượng cation Canxi $\\text{Ca}^{2+}$ tạo kết tủa đó lại do một mình vôi tôi $\\text{Ca(OH)}_2$ cung cấp theo đúng tỉ lệ khắc khít $1:1$. Vì vậy, số mol vôi tôi tiêu tốn bắt buộc phải bằng chính tổng số mol gốc $\\text{SO}_4$: $3x\\text{ (từ muối Sắt III)} + 8x\\text{ (từ muối Sắt II)} = 11x$."
+            },
+            step4: {
+                title: "🔍 Nhắc nhở về Khối lượng mol và Quy tắc làm tròn số",
+                body: "Hợp chất vôi tôi có công thức phân tử là $\\text{Ca(OH)}_2$, khối lượng mol cấu thành: $M = 40 + (16 + 1) \\times 2 = 74\\text{ g/mol}$.<br>Kết quả tính toán chưa làm tròn cho ra giá trị $122,1\\text{ gam}$. Vì đề bài khống chế điều kiện cực kỳ nghiêm ngặt: <i>'Làm tròn kết quả đến hàng đơn vị'</i>, số đầu tiên sau dấu phẩy là 1 ($1 < 5$) nên theo quy tắc toán học, ta loại bỏ phần thập phân và giữ nguyên phần số nguyên là $122$. Đây là quy chuẩn điền số chuẩn xác tuyệt đối trong phác thảo ma trận đề thi THPT mới."
+            }
+        };
+
+        // Hàm kích hoạt mở Pop-up giải thích sâu cho từng bước cụ thể
+        function openExplanation(stepKey) {
+            const modal = document.getElementById('explanationModal');
+            const titleEl = document.getElementById('modalTitle');
+            const bodyEl = document.getElementById('modalBody');
+
+            if (explanationData[stepKey]) {
+                titleEl.innerHTML = explanationData[stepKey].title;
+                bodyEl.innerHTML = explanationData[stepKey].body;
+                modal.style.display = 'flex';
+                
+                // Yêu cầu MathJax render ngay lập tức các ký hiệu toán học bên trong nội dung Pop-up vừa mở
+                if (window.MathJax) {
+                    MathJax.typesetPromise([bodyEl]);
+                }
+            }
+        }
+
+        // Hàm đóng Pop-up
+        function closeModal() {
+            document.getElementById('explanationModal').style.display = 'none';
+        }
+
+        // Tự động đóng pop-up nếu học sinh bấm lệch chuột ra ngoài vùng thẻ card trắng
+        window.onclick = function(event) {
+            const modal = document.getElementById('explanationModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

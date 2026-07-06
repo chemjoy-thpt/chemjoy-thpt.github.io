@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thí nghiệm 3: Chuẩn độ Fe2+ bằng KMnO4</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      MathJax = {
+        loader: {load: ['[tex]/mhchem']},
+        tex: {
+          packages: {'[+]': ['mhchem']},
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Tối ưu UI/UX: Khoảng cách và hiệu ứng khối */
+        .image-placeholder {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .image-placeholder:hover { background-color: #f1f5f9; border-color: #94a3b8; }
+        .image-placeholder i { font-size: 2.5rem; color: #94a3b8; }
+        
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            text-align: center;
+        }
+        .custom-table th { background-color: #4e54c8; color: white; font-weight: 600; }
+        .custom-table tr:nth-child(even) { background-color: #f8fafc; }
+        
+        /* UI Hỗ trợ sư phạm (Hints & Explanations) */
+        .hint-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #5c4000;
+        }
+        .explain-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #0b3d60;
+        }
+        
+        /* Tối ưu khoảng cách trong Quiz */
+        .interactive-quiz {
+            margin-bottom: 30px; 
+            padding: 25px;
+            background: #ffffff;
+            border-left: 4px solid #8f94fb;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .check-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .check-btn:hover {
+            background: #8f94fb;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="display: flex; flex-wrap: wrap; margin: 40px auto; gap: 40px;">
+        
+        <main class="main-content" style="flex: 3; min-width: 0;">
+            
+            <h1>VIDEO 3: XÁC ĐỊNH NỒNG ĐỘ MUỐI $\ce{Fe^{2+}}$ BẰNG CHUẨN ĐỘ THUỐC TÍM</h1>
+            <p><strong>Nội dung cốt lõi:</strong> Hóa vô cơ - Đại cương về kim loại</p>
+
+            <hr>
+
+            <section class="video-section">
+                <h2 style="text-transform: uppercase;">1. Quan sát thí nghiệm</h2>
+                
+                <div class="socratic-block">
+                    <h4 style="text-transform: uppercase;">💡 Gợi ý tư duy (Socratic & 5W1H)</h4>
+                    <p><strong>What & Why:</strong> Hãy chú ý đến sự thay đổi màu sắc của dung dịch trong bình tam giác. Tại sao ở điểm dừng chuẩn độ, dung dịch lại chuyển sang màu hồng nhạt và phải duy trì màu đó trong một khoảng thời gian nhất định?</p>
+                </div>
+                
+                <div class="responsive-video" style="padding-bottom: 56.25%; position: relative; margin: 0 auto 30px auto;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/od6ixHbM0Ko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi kiểm tra nhanh</h3>
+                
+                <div class="interactive-quiz" data-type="mcq" data-answer="C" 
+                     data-hint="Dung dịch thuốc tím có màu rất đậm và là chất chuẩn độ, nó cần được đo thể tích nhỏ giọt một cách chính xác." 
+                     data-explain="Trong chuẩn độ, dung dịch chuẩn (ở đây là $\ce{KMnO4}$) thường được cho vào burette để đo chính xác thể tích tiêu tốn, còn dung dịch cần xác định nồng độ ($\ce{Fe^{2+}}$) được lấy một thể tích chính xác cho vào bình tam giác.">
+                    <p><strong>Câu 1:</strong> Trong thí nghiệm xác định nồng độ ion $\ce{Fe^{2+}}$ bằng phương pháp chuẩn độ với dung dịch thuốc tím ($\ce{KMnO4}$) trong môi trường acid, dung dịch thuốc tím được chứa trong dụng cụ nào?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="A"> A. Bình tam giác.</label>
+                        <label><input type="radio" name="q1" value="B"> B. Cốc thủy tinh.</label>
+                        <label><input type="radio" name="q1" value="C"> C. Burette.</label>
+                        <label><input type="radio" name="q1" value="D"> D. Bình định mức.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="A"
+                     data-hint="Việc quan sát sự chuyển từ 'không màu' sang 'có màu' luôn dễ dàng và chính xác hơn là quan sát sự 'mất màu' hoàn toàn của một dung dịch đậm màu."
+                     data-explain="Cách 1 là chuẩn xác. Nhỏ $\ce{KMnO4}$ (màu tím) vào dung dịch $\ce{Fe^{2+}}$ (không màu/nhạt). Khi toàn bộ $\ce{Fe^{2+}}$ đã phản ứng hết, chỉ cần dư 1 giọt $\ce{KMnO4}$, toàn bộ dung dịch sẽ chuyển sang màu hồng nhạt, rất dễ quan sát điểm dừng. Ngược lại, Cách 2 rất khó để xác định chính xác thời điểm mất màu tím.">
+                    <p><strong>Câu 2:</strong> Một học sinh tiến hành chuẩn độ dung dịch $\ce{Fe^{2+}}$ bằng dung dịch $\ce{KMnO4}$ theo hai cách như sau:<br>
+                    - Cách 1: Nhỏ từ từ dung dịch $\ce{KMnO4}$ vào dung dịch chứa ion $\ce{Fe^{2+}}$ trong môi trường acid cho đến khi xuất hiện màu hồng nhạt bền trong khoảng 30 giây.<br>
+                    - Cách 2: Nhỏ từ từ dung dịch $\ce{Fe^{2+}}$ trong môi trường acid vào dung dịch $\ce{KMnO4}$ cho đến khi màu hồng của dung dịch $\ce{KMnO4}$ biến mất.<br>
+                    Hãy cho biết cách tiến hành chuẩn độ nào là phù hợp?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="A"> A. Cách 1.</label>
+                        <label><input type="radio" name="q2" value="B"> B. Cách 2.</label>
+                        <label><input type="radio" name="q2" value="C"> C. Cả hai cách.</label>
+                        <label><input type="radio" name="q2" value="D"> D. Không có cách nào.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="analysis-section">
+                <h2 style="text-transform: uppercase;">2. Phân tích và Tính toán</h2>
+
+                <div class="feynman-block" style="margin-bottom: 40px;">
+                    <h4 style="text-transform: uppercase;">👨‍🏫 Tập làm Thầy giáo (Feynman Technique)</h4>
+                    <p>Bạn giải thích thế nào về vai trò của $\ce{H2SO4}$ loãng trong phản ứng chuẩn độ này? Tại sao chúng ta không thể dùng $\ce{HCl}$ hoặc $\ce{HNO3}$ thay thế?</p>
+                    <textarea placeholder="Ví dụ: H2SO4 đóng vai trò tạo môi trường để Mn từ +7 xuống +2. Nếu dùng HCl thì thuốc tím sẽ oxi hóa luôn cả ion Cl- thành khí Cl2 làm sai lệch kết quả..."></textarea>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm nhiều lựa chọn</h3>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="C"
+                     data-hint="Hãy kiểm tra lại phương trình phản ứng oxi hóa - khử. Cân bằng phương trình để kiểm tra hệ số. Hãy tính toán thử ý (d) theo công thức bảo toàn electron."
+                     data-explain="Có 3 phát biểu đúng là (a), (b), (d).<br>
+                     - <strong>Ý a:</strong> $10\ce{FeSO4} + 2\ce{KMnO4} + 8\ce{H2SO4} \rightarrow 5\ce{Fe2(SO4)3} + 2\ce{MnSO4} + \ce{K2SO4} + 8\ce{H2O}$. Tổng hệ số là 36 (Đúng).<br>
+                     - <strong>Ý b:</strong> Dấu hiệu nhận biết điểm tương đương chính là màu hồng bền khoảng 20s (Đúng).<br>
+                     - <strong>Ý c:</strong> Sai, vì đặt $\ce{Fe^{2+}}$ trên burette dễ bị oxi hóa bởi không khí thành $\ce{Fe^{3+}}$, đồng thời khó quan sát điểm tương đương.<br>
+                     - <strong>Ý d:</strong> $n_{\ce{KMnO4}} = 0,01 \times 0,04 = 4 \times 10^{-4}$ mol. Áp dụng bảo toàn e: $n_{\ce{Fe^{2+}}} = 5 \times n_{\ce{KMnO4}} = 2 \times 10^{-3}$ mol. $\Rightarrow m_{\ce{Fe}} = 2 \times 10^{-3} \times 56 = 0,112$ gam = 112 mg. $\Rightarrow \% \ce{Fe} = \frac{112}{250} \times 100\% = 44,8\%$ (Đúng).">
+                    <p><strong>Câu 3:</strong> Thí nghiệm: Chuẩn độ muối $\ce{Fe(II)}$ bằng dung dịch $\ce{KMnO4}$.<br>
+                    - Chuẩn bị: Dụng cụ và hóa chất gồm $\ce{KMnO4}$ $C_1$ (M), $\ce{H2SO4}$ 10%, $\ce{FeSO4}$ $C_2$ (M), burette, bình tam giác...<br>
+                    - Cách tiến hành: Dùng pipette lấy $V_1$ mL dung dịch $\ce{FeSO4}$ cho vào bình tam giác; thêm vào bình $V_1$ mL dung dịch $\ce{H2SO4}$ 10%. Cho dung dịch $\ce{KMnO4}$ vào burette. Mở khoá burette, nhỏ từng giọt dung dịch $\ce{KMnO4}$ xuống bình tam giác, lắc đều.<br>
+                    <div class="image-placeholder">
+                        <img src="ChatGPT Image 10_22_50 6 thg 7, 2026.png" alt="Sơ đồ thí nghiệm chuẩn độ Fe2+ bằng KMnO4" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    </div>
+                    Cho các phát biểu sau:<br>
+                    a) Phản ứng chuẩn độ là $\ce{KMnO4 + FeSO4 + H2SO4 -> MnSO4 + K2SO4 + Fe2(SO4)3 + H2O}$ với tổng hệ số tối giản của các chất trong phương trình là 36.<br>
+                    b) Khi dung dịch trong bình tam giác xuất hiện màu hồng bền trong khoảng 20 giây thì dừng chuẩn độ, ghi lại thể tích dung dịch $\ce{KMnO4}$ là $V_2$. Tiến hành chuẩn độ 3 lần.<br>
+                    c) Có thể thực hiện phép chuẩn độ trên bằng cách đựng dung dịch $\ce{KMnO4}$ ở bình tam giác và dung dịch $\ce{FeSO4}$ trong môi trường acid ở burette cũng cho kết quả tương tự.<br>
+                    d) Cần xác định hàm lượng nguyên tố sắt trong một viên thuốc bổ sung sắt nặng 250 mg chứa nguyên tố sắt chỉ ở dạng muối $\ce{Fe(II)}$. Kết quả lượng $\ce{Fe(II)}$ trong viên này phản ứng vừa đủ với 10,0 mL dung dịch $\ce{KMnO4}$ 0,04 M. Phần trăm khối lượng của nguyên tố sắt trong viên thuốc là 44,8%.<br>
+                    Có bao nhiêu phát biểu đúng?</p>
+                    
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="A"> A. 2.</label>
+                        <label><input type="radio" name="q3" value="B"> B. 1.</label>
+                        <label><input type="radio" name="q3" value="C"> C. 3.</label>
+                        <label><input type="radio" name="q3" value="D"> D. 4.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm trả lời ngắn</h3>
+
+                <div class="interactive-quiz" data-type="short" data-answer="4"
+                     data-hint="Chú ý phát biểu số 5. Nếu dùng NaOH, phản ứng tạo kết tủa Fe(OH)2 và Mn(OH)2 sẽ xảy ra, điều này có tốt cho một phép chuẩn độ đo thể tích dung dịch không?"
+                     data-explain="Có 4 nhận định đúng là (1), (2), (3), (4).<br>Nhận định (5) Sai: Không thể thay $\ce{H2SO4}$ bằng $\ce{NaOH}$ vì môi trường base sẽ làm kết tủa ion $\ce{Fe^{2+}}$ thành $\ce{Fe(OH)2}$ và làm hỏng phản ứng chuẩn độ oxi hóa khử.">
+                    <p><strong>Câu 4:</strong> Tiến hành thí nghiệm xác định nồng độ ion $\ce{Fe^{2+}}$ bằng phương pháp chuẩn độ với dung dịch thuốc tím ($\ce{KMnO4}$). Cho các nhận định sau:<br>
+                    1. Dung dịch $\ce{KMnO4}$ được chứa trong burette.<br>
+                    2. Dung dịch $\ce{H2SO4}$ được thêm vào để tạo môi trường acid.<br>
+                    3. $\ce{KMnO4}$ là chất oxi hóa trong phản ứng chuẩn độ.<br>
+                    4. Khi kết thúc chuẩn độ, dung dịch trong bình tam giác chuyển sang màu hồng nhạt bền trong khoảng 30 giây.<br>
+                    5. Có thể thay $\ce{H2SO4}$ bằng dung dịch $\ce{NaOH}$ để phản ứng xảy ra tốt hơn.<br>
+                    Số nhận định đúng là:</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập số lượng nhận định đúng...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="60,9"
+                     data-hint="Viết phương trình hoặc áp dụng bảo toàn electron: 1 mol MnO4- nhận 5e; 1 mol Fe2+ nhường 1e."
+                     data-explain="<ul><li>Theo bảo toàn electron: $n_{\ce{Fe^{2+}}} = 5 \times n_{\ce{KMnO4}}$</li><li>$n_{\ce{KMnO4}} = 0,0252 \text{ (L)} \times 0,025 \text{ (M)} = 6,3 \times 10^{-4}$ mol.</li><li>$\Rightarrow n_{\ce{FeCO3}} = n_{\ce{Fe^{2+}}} = 5 \times 6,3 \times 10^{-4} = 3,15 \times 10^{-3}$ mol.</li><li>Khối lượng $\ce{FeCO3} = 3,15 \times 10^{-3} \times 116 = 0,3654$ gam.</li><li>Phần trăm $\ce{FeCO3} = \frac{0,3654}{0,6} \times 100\% = 60,9\%$.</li></ul>">
+                    <p><strong>Câu 5:</strong> Để xác định hàm lượng của $\ce{FeCO3}$ trong quặng xiđerit, người ta làm như sau: Cân 0,6 gam mẫu quặng, chế hóa nó theo một quy trình hợp lí, thu được dung dịch $\ce{FeSO4}$ trong môi trường $\ce{H2SO4}$ loãng. Chuẩn độ dung dịch thu được bằng dung dịch chuẩn $\ce{KMnO4}$ 0,025M thì dùng vừa hết 25,2 ml. Hãy tính $\%$ theo khối lượng của $\ce{FeCO3}$ trong quặng?</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập phần trăm (VD: 50,5)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="12,5"
+                     data-hint="Thí nghiệm 1 giúp bạn xác định tổng số mol nhóm SO4(2-). Thí nghiệm 2 giúp xác định lượng Fe2+ còn dư. Số mol Fe2+ bị oxi hóa bằng tổng số mol Fe ban đầu trừ đi lượng Fe2+ dư."
+                     data-explain="<ul>
+                     <li>Dung dịch Y (100mL) chia làm các phần 25mL, tức là lấy ra $1/4$. Lượng $\ce{H2SO4}$ trong mỗi phần là $0,06 / 4 = 0,015$ mol.</li>
+                     <li><strong>Thí nghiệm 1:</strong> Tạo kết tủa $\ce{BaSO4}$. $n_{\ce{BaSO4}} = \frac{5,825}{233} = 0,025$ mol. Bảo toàn gốc $\ce{SO4}$, lượng $\ce{SO4}$ từ muối ban đầu trong 25mL là $0,025 - 0,015 = 0,01$ mol. $\Rightarrow$ Tổng $n_{\ce{Fe}}$ ban đầu = $0,01$ mol (do muối là $\ce{FeSO4}$).</li>
+                     <li><strong>Thí nghiệm 2:</strong> Chuẩn độ lượng $\ce{Fe^{2+}}$ còn dư. $n_{\ce{KMnO4}} = 0,0175 \times 0,1 = 1,75 \times 10^{-3}$ mol. $\Rightarrow n_{\ce{Fe^{2+}}\text{ dư}} = 5 \times 1,75 \times 10^{-3} = 8,75 \times 10^{-3}$ mol.</li>
+                     <li>Lượng $\ce{Fe^{2+}}$ đã bị oxi hóa = $0,01 - 8,75 \times 10^{-3} = 1,25 \times 10^{-3}$ mol.</li>
+                     <li>Phần trăm bị oxi hóa: $a = \frac{1,25 \times 10^{-3}}{0,01} \times 100\% = 12,5\%$.</li>
+                     </ul>">
+                    <p><strong>Câu 6:</strong> Trong quá trình bảo quản, muối $\ce{FeSO4.7H2O}$ thường bị oxi hoá bởi oxi không khí tạo thành hỗn hợp X chứa các hợp chất của $\ce{Fe(II)}$ và $\ce{Fe(III)}$. Để xác định lượng $\ce{Fe(II)}$ bị oxi hoá người ta hoà tan một lượng X trong dung dịch loãng chứa 0,06 mol $\ce{H2SO4}$, thu được 100 mL dung dịch Y. Tiến hành hai thí nghiệm với Y:<br>
+                    - Thí nghiệm 1: Cho lượng dư dung dịch $\ce{BaCl2}$ vào 25 mL dung dịch Y, lọc kết tủa, sấy khô rồi đem cân thu được 5,825 gam chất rắn.<br>
+                    - Thí nghiệm 2: Thêm dung dịch $\ce{H2SO4}$ (loãng, dư) vào 25 mL dung dịch Y, thu được dung dịch Z. Chuẩn độ dung dịch Z bằng dung dịch chuẩn $\ce{KMnO4}$ 0,1 M đến khi đầu xuất hiện màu hồng (tồn tại khoảng 20 giây) thì hết 17,5 mL.<br>
+                    Phần trăm $\ce{Fe(II)}$ đã bị oxi hoá là a%. Tính giá trị của a (làm tròn kết quả đến hàng phần mười).</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập con số (VD: 20,5)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm Đúng/Sai</h3>
+                
+                <div class="interactive-quiz" data-type="tf" data-answer="Đ,S,Đ,S"
+                     data-hint="Đối với ý (d), hãy cẩn thận tính giá trị thể tích trung bình của 3 lần chuẩn độ, sau đó nhân 5 theo bảo toàn electron, cuối cùng chú ý hệ số pha loãng (10mL so với 100mL gốc)."
+                     data-explain="<ul><li><strong>a) Đúng:</strong> Môi trường acid mạnh cần thiết để khử $\ce{MnO4-}$ xuống $\ce{Mn^{2+}}$.</li><li><strong>b) Sai:</strong> Không thể thay bằng $\ce{HCl}$ vì $\ce{KMnO4}$ có tính oxi hóa mạnh, sẽ oxi hóa $\ce{Cl-}$ trong $\ce{HCl}$ thành khí $\ce{Cl2}$, làm hao hụt lượng $\ce{KMnO4}$ và sai lệch kết quả chuẩn độ.</li><li><strong>c) Đúng:</strong> Giọt $\ce{KMnO4}$ không mất màu chính là dấu hiệu $\ce{KMnO4}$ bắt đầu dư, đánh dấu phản ứng đã đạt điểm tương đương.</li><li><strong>d) Sai:</strong> Thể tích $\ce{KMnO4}$ trung bình là $(16,0 + 16,1 + 16,0) / 3 = 16,033$ mL. $n_{\ce{KMnO4}} = 3,687 \times 10^{-4}$ mol. Số mol muối trong 10mL là $1,8438 \times 10^{-3}$ mol. Vậy trong 100mL dung dịch X ban đầu có $1,8438 \times 10^{-2}$ mol muối. Khối lượng muối lý thuyết: $1,8438 \times 10^{-2} \times 392 = 7,227$ gam. Độ tinh khiết = $(7,227 / 7,237) \times 100\% = 99,87\%$. Giá trị gần nhất là 99,87 chứ không phải 98,45.</li></ul>">
+                    <p><strong>Câu 7:</strong> Muối Mohr có công thức $\ce{(NH4)2Fe(SO4)2.6H2O}$. Để xác định độ tinh khiết của một loại muối Mohr, một học sinh tiến hành các thí nghiệm sau: Cân chính xác 7,237 gam muối Mohr, pha thành 100 mL dung dịch X. Lấy chính xác 10 mL dung dịch X, thêm 10 mL dung dịch $\ce{H2SO4}$ 10%, được dung dịch Y. Chuẩn độ dung dịch Y bằng dung dịch chuẩn $\ce{KMnO4}$ 0,023M. Thực hiện chuẩn độ 3 lần. Các thể tích dung dịch $\ce{KMnO4}$ lần lượt là 16,0 mL; 16,1 mL; 16,0 mL.</p>
+                    
+                    <p style="font-weight: 600; color: #1e3c72; margin-top: 25px;">Hãy chọn Đúng/Sai cho các phát biểu dưới đây:</p>
+                    
+                    <div class="quiz-options">
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>a) Dung dịch $\ce{H2SO4}$ được thêm vào dung dịch chuẩn độ để tạo thành môi trường acid, giúp phản ứng xảy ra theo hướng tạo thành $\ce{Mn^{2+}}$.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_a" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_a" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>b) Có thể thay dung dịch $\ce{H2SO4}$ bằng dung dịch acid mạnh như $\ce{HCl}$, $\ce{HNO3}$ nhưng phải đảm bảo lượng $\ce{H+}$ dư sau phản ứng.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_b" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_b" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>c) Trong mỗi lần chuẩn độ, dung dịch $\ce{KMnO4}$ được xem là phản ứng vừa đủ với muối Mohr (điểm dừng) khi giọt dung dịch $\ce{KMnO4}$ cuối cùng nhỏ vào dung dịch Y không mất màu.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_c" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_c" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 10px;">
+                            <p>d) Theo kết quả chuẩn độ ở trên, trong số các giá trị: 93,32; 98,45; 97,36; 99,87 độ tinh khiết (% khối lượng $\ce{(NH4)2Fe(SO4)2.6H2O}$) của muối Mohr có giá trị gần nhất với 98,45.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_d" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_d" value="S"> Sai</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTF(this)">Chấm điểm</button>
+                    <div class="feedback"></div>
+                </div>
+
+            </section>
+        </main>
+
+        <aside class="sidebar" style="flex: 1; min-width: 250px;">
+            <h3 style="text-transform: uppercase;">Danh mục Thí nghiệm</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><a href="experiment1.html">1. Phản ứng Ester hóa</a></li>
+                <li><a href="experiment2.html">2. Phản ứng Nitro hóa</a></li>
+                <li><strong>👉 3. Chuẩn độ Fe2+ bằng KMnO4</strong></li>
+                <li><a href="experiment4.html">4. Phản ứng Tráng bạc</a></li>
+                <li><a href="experiment5.html">5. Điện phân dung dịch NaCl</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleFeedback(container, isCorrect, correctAnswer = "") {
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            const feedback = container.querySelector('.feedback');
+            
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🎉 <strong>Tuyệt vời! Kết quả chính xác.</strong><br><div class="explain-box">📖 <strong>Giải thích:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `🤔 <strong>Chưa đúng rồi!</strong> Bạn hãy xem qua gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    let answerText = correctAnswer ? ` Đáp án đúng là <strong>${correctAnswer}</strong>.` : "";
+                    feedback.innerHTML = `🥲 <strong>Vẫn chưa đúng.</strong>${answerText}<br><div class="explain-box">📖 <strong>Cùng xem giải thích nhé:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+
+        function checkMCQ(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer');
+            const selected = container.querySelector('input[type="radio"]:checked');
+            const feedback = container.querySelector('.feedback');
+
+            if (!selected) {
+                feedback.innerHTML = "⚠️ Vui lòng chọn một đáp án trước khi kiểm tra!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            handleFeedback(container, selected.value === correctAnswer, correctAnswer);
+        }
+
+        function checkShort(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer').toLowerCase().trim();
+            const input = container.querySelector('.short-answer-input').value.toLowerCase().trim();
+            const feedback = container.querySelector('.feedback');
+
+            if (input === "") {
+                feedback.innerHTML = "⚠️ Vui lòng nhập câu trả lời!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (input === correctAnswer || input.replace(',', '.') === correctAnswer.replace(',', '.'));
+            handleFeedback(container, isCorrect, correctAnswer);
+        }
+
+        function checkTF(btn) {
+            const container = btn.parentElement;
+            const correctAnswers = container.getAttribute('data-answer').split(',');
+            const radioGroups = [...new Set(Array.from(container.querySelectorAll('input[type="radio"]')).map(el => el.name))];
+            const feedback = container.querySelector('.feedback');
+            
+            let score = 0;
+            let allAnswered = true;
+
+            radioGroups.forEach((groupName, index) => {
+                const selected = container.querySelector(`input[name="${groupName}"]:checked`);
+                if (!selected) allAnswered = false;
+                else if (selected.value === correctAnswers[index]) score++;
+            });
+
+            if (!allAnswered) {
+                feedback.innerHTML = "⚠️ Vui lòng hoàn thành toàn bộ các ý (a, b, c, d) trước khi chấm điểm!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (score === correctAnswers.length);
+            
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🏆 <strong>Xuất sắc! Bạn trả lời đúng toàn bộ ${score}/${correctAnswers.length} ý.</strong><br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `⚠️ <strong>Bạn mới đúng ${score}/${correctAnswers.length} ý.</strong> Cùng kiểm tra lại bằng gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    feedback.innerHTML = `🥲 <strong>Bạn trả lời đúng ${score}/${correctAnswers.length} ý.</strong> Đáp án chuẩn là: <strong>${correctAnswers.join(' - ')}</strong>.<br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

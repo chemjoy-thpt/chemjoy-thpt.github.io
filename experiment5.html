@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thí nghiệm 5: Điện phân dung dịch NaCl</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      MathJax = {
+        loader: {load: ['[tex]/mhchem']},
+        tex: {
+          packages: {'[+]': ['mhchem']},
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Tối ưu UI/UX: Khoảng cách và hiệu ứng khối */
+        .image-placeholder {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .image-placeholder:hover { background-color: #f1f5f9; border-color: #94a3b8; }
+        .image-placeholder i { font-size: 2.5rem; color: #94a3b8; }
+        
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            text-align: center;
+        }
+        .custom-table th { background-color: #4e54c8; color: white; font-weight: 600; }
+        .custom-table tr:nth-child(even) { background-color: #f8fafc; }
+        
+        /* UI Hỗ trợ sư phạm (Hints & Explanations) */
+        .hint-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #5c4000;
+        }
+        .explain-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #0b3d60;
+        }
+        
+        /* Tối ưu khoảng cách trong Quiz */
+        .interactive-quiz {
+            margin-bottom: 30px; 
+            padding: 25px;
+            background: #ffffff;
+            border-left: 4px solid #8f94fb;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .check-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .check-btn:hover {
+            background: #8f94fb;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="display: flex; flex-wrap: wrap; margin: 40px auto; gap: 40px;">
+        
+        <main class="main-content" style="flex: 3; min-width: 0;">
+            
+            <h1>VIDEO 5: ĐIỆN PHÂN DUNG DỊCH NaCl CÓ MÀNG NGĂN</h1>
+            <p><strong>Nội dung cốt lõi:</strong> Hóa vô cơ - Điện phân</p>
+
+            <hr>
+
+            <section class="video-section">
+                <h2 style="text-transform: uppercase;">1. Quan sát thí nghiệm</h2>
+                
+                <div class="socratic-block">
+                    <h4 style="text-transform: uppercase;">💡 Gợi ý tư duy (Socratic & 5W1H)</h4>
+                    <p><strong>What & Why:</strong> Hãy chú ý hiện tượng bọt khí thoát ra ở hai điện cực và sự đổi màu của dung dịch khi có phenolphthalein. Khí sinh ra ở mỗi cực là khí gì? Tại sao dung dịch ở cực âm lại chuyển sang màu hồng rực rỡ?</p>
+                </div>
+                
+                <div class="responsive-video" style="padding-bottom: 56.25%; position: relative; margin: 0 auto 30px auto;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1hW1hJghqq0?si=eLwhsmi8lMlEszAt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi kiểm tra nhanh</h3>
+                
+                <div class="interactive-quiz" data-type="mcq" data-answer="A" 
+                     data-hint="Chú ý cực dương (anode) xảy ra quá trình oxi hóa, cực âm (cathode) xảy ra quá trình khử." 
+                     data-explain="Khi điện phân dung dịch NaCl có màng ngăn: Ở anode (cực dương) xảy ra quá trình oxi hóa ion Cl- tạo khí Cl2. Ở cathode (cực âm) xảy ra quá trình khử H2O tạo khí H2 và ion OH- (kết hợp với Na+ tạo NaOH). Do đó sản phẩm ở anode là Cl2 và ở cathode là NaOH, H2.">
+                    <p><strong>Câu 1:</strong> Khi điện phân dung dịch NaCl có màng ngăn, các chất được tạo ra ở anode (cực dương) và cathode (cực âm) lần lượt là:</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="A"> A. Cl2 và NaOH, H2.</label>
+                        <label><input type="radio" name="q1" value="B"> B. Na và Cl2.</label>
+                        <label><input type="radio" name="q1" value="C"> C. Cl2 và Na.</label>
+                        <label><input type="radio" name="q1" value="D"> D. NaOH và H2.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="D"
+                     data-hint="Nếu không có màng ngăn, sản phẩm sinh ra ở hai cực sẽ phản ứng với nhau tạo thành nước Javel có tính tẩy màu."
+                     data-explain="Khi điện phân dung dịch NaCl không có màng ngăn, khí Cl2 thoát ra ở anode sẽ phản ứng với NaOH sinh ra ở cathode tạo thành nước Javel (chứa NaClO). Nước Javel có tính oxi hóa mạnh nên làm mất màu mẩu giấy màu. Các phát biểu còn lại sai: Ở cathode xảy ra quá trình khử H2O; Ở anode xảy ra quá trình oxi hóa Cl-.">
+                    <p><strong>Câu 2:</strong> Xét quá trình điện phân dung dịch NaCl bão hoà không có màng ngăn. Phát biểu nào sau đây đúng ?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="A"> A. Quá trình xảy ra tại cathode là Na+ + 1e → Na.</label>
+                        <label><input type="radio" name="q2" value="B"> B. Quá trình xảy ra tại anode là 2H2O + 2e → H2 + 2OH-.</label>
+                        <label><input type="radio" name="q2" value="C"> C. Dung dịch thu được sau phản ứng là dung dịch NaOH.</label>
+                        <label><input type="radio" name="q2" value="D"> D. Cho mẩu giấy màu vào dung dịch sau phản ứng thấy mẩu giấy mất màu.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="analysis-section">
+                <h2 style="text-transform: uppercase;">2. Phân tích và Tính toán</h2>
+
+                <div class="feynman-block" style="margin-bottom: 40px;">
+                    <h4 style="text-transform: uppercase;">👨‍🏫 Tập làm Thầy giáo (Feynman Technique)</h4>
+                    <p>Hãy giải thích cho một học sinh lớp dưới về lý do tại sao trong công nghiệp, hệ thống điện phân dung dịch $\ce{NaCl}$ lại BẮT BUỘC phải có "màng ngăn xốp"? Nếu tháo màng ngăn này ra thì sản phẩm sẽ thay đổi như thế nào?</p>
+                    <textarea placeholder="Ví dụ: Màng ngăn xốp giống như một bức tường rào chỉ cho ion đi qua nhưng chặn các chất khí và chất lỏng hòa trộn. Nếu không có nó, khí Clo sinh ra sẽ lập tức tác dụng với NaOH..."></textarea>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm nhiều lựa chọn</h3>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="C"
+                     data-hint="Áp dụng công thức Faraday để tính số mol e trao đổi. Khối lượng dung dịch giảm bằng tổng khối lượng các khí thoát ra (Cl2 và H2)."
+                     data-explain="Số mol electron: $n_e = \frac{I \cdot t}{F} = \frac{10 \times (2 \times 3600)}{96500} \approx 0,746$ mol.<br>Ở Anode sinh ra Cl2: $n_{\ce{Cl2}} = \frac{n_e}{2} \approx 0,373$ mol.<br>Ở Cathode sinh ra H2: $n_{\ce{H2}} = \frac{n_e}{2} \approx 0,373$ mol.<br>Khối lượng dung dịch giảm: $m_{giảm} = m_{\ce{Cl2}} + m_{\ce{H2}} = 0,373 \times 71 + 0,373 \times 2 = 27,2$ gam.">
+                    <p><strong>Câu 3:</strong> Điện phân dung dịch NaCl có màng ngăn với cường độ dòng điện 10A trong 2 giờ. Tính khối lượng dung dịch giảm sau khi điện phân, giả thiết chỉ có phản ứng điện phân dung dịch NaCl, bỏ qua lượng nước bay hơi. Cho biết các công thức: Q = n.F = I.t, trong đó: Q là điện lượng (C), n là số mol electron đi qua dây dẫn, I là cường độ dòng điện (A), t là thời gian (giây), F là hằng số Faraday.</p>
+                    
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="A"> A. 13,6 g.</label>
+                        <label><input type="radio" name="q3" value="B"> B. 20,4 g.</label>
+                        <label><input type="radio" name="q3" value="C"> C. 27,2 g.</label>
+                        <label><input type="radio" name="q3" value="D"> D. 34,0 g.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm trả lời ngắn</h3>
+
+                <div class="interactive-quiz" data-type="short" data-answer="4"
+                     data-hint="Phân tích từng phát biểu. Chú ý khí ở cực dương (anode) là Cl2, cực âm (cathode) là H2. Mức chất lỏng giữa hai buồng cũng ảnh hưởng đến chiều chảy của dung dịch."
+                     data-explain="Phát biểu đúng là (4).<br>- (1) Sai: Khí X sinh ra ở anode là Cl2, khí Y ở cathode là H2.<br>- (2) Sai: Không thể thu NaOH tinh khiết 50% chỉ bằng cách tăng nồng độ NaCl bằng thiết bị có màng ngăn xốp thông thường (dung dịch sẽ lẫn NaCl).<br>- (3) Sai: Thế điện cực của H2O lớn hơn Na+ nên H2O bị khử, không phải 2H+/H2 vì môi trường ở cathode là bazơ.<br>- (4) Đúng: Duy trì mức chất lỏng cao hơn ở khoang anode giúp dung dịch chảy qua màng xốp sang khoang cathode, ngăn dòng ngược lại mang NaOH sang anode.">
+                    <p><strong>Câu 4:</strong> Trong công nghiệp chlorine-kiềm, công nghệ sử dụng phổ biến để điều chế khí Cl2 và NaOH là điện phân dung dịch NaCl bão hòa có màng ngăn. Mô hình thiết bị điện phân được thể hiện trong hình vẽ sau:<br>
+                        <img src="Sơ đồ 1.png" alt="Sơ đồ điện phân NaCl có màng ngăn" style="max-width: 100%; height: auto; margin: 15px 0;">
+                    (1) Khí X là hydrogen và khí Y là chlorine.<br>
+                    (2) Để thu được dung dịch NaOH tinh khiết hơn (nồng độ 50%) có thể tăng nồng độ dung dịch NaCl ban đầu.<br>
+                    (3) Ở cathode, nước bị khử thay cho Na+ do thế điện cực của cặp 2H+/H2 nhỏ hơn Na⁺/Na.<br>
+                    (4) Dung dịch NaCl được đưa vào từ anode và được duy trì ở mức cao hơn bên cathode giúp chất lỏng chảy từ trái sang phải, ngăn không cho dung dịch NaOH chảy sang anode.<br>
+                    Liệt kê các phát biểu đúng (theo thứ tự tăng dần)?</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập đáp án (VD: 1, 2)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="1058"
+                     data-hint="Tính khối lượng từng chất tan trong 1000 lít nước Javel. Sau đó dùng định luật bảo toàn nguyên tố (Na hoặc Cl) để tìm ra tổng khối lượng NaCl cần dùng ban đầu."
+                     data-explain="<ul>
+                     <li>Khối lượng 1000 chai Javel = $1000 \times 1000 \text{ mL} \times 1,15 \text{ g/mL} = 1.150.000 \text{ g} = 1150 \text{ kg}$.</li>
+                     <li>Khối lượng $\ce{NaClO}$: $1150 \times 10\% = 115 \text{ kg} \Rightarrow n_{\ce{NaClO}} = \frac{115}{74,5}$ kmol.</li>
+                     <li>Khối lượng $\ce{NaCl}$ dư: $1150 \times 8\% = 92 \text{ kg} \Rightarrow n_{\ce{NaCl dư}} = \frac{92}{58,5}$ kmol.</li>
+                     <li>Bảo toàn nguyên tố Na để tìm NaCl ban đầu:<br> $n_{\ce{NaCl (bđ)}} = n_{\ce{NaClO}} + n_{\ce{NaCl (dư)}} + n_{\ce{NaOH}} = \frac{115}{74,5} + \frac{92}{58,5} + \frac{1150 \times 0,008}{40} \approx 3,346$ kmol.</li>
+                     <li>$m_{\ce{NaCl (bđ)}} = 3,346 \times 58,5 \approx 195,7 \text{ kg}$.</li>
+                     <li>Khối lượng dung dịch $\ce{NaCl}$ 18,5% cần dùng = $\frac{195,7}{0,185} \approx 1058 \text{ kg}$.</li>
+                     </ul>">
+                    <p><strong>Câu 5:</strong> Trong công nghiệp, sản xuất nước Javel xảy ra qua hai giai đoạn chính sau:<br>
+                    Giai đoạn 1: điện phân dung dịch NaCl bão hòa không có màng ngăn điện cực: 2NaCl(aq) + 2H2O(l) → 2NaOH(aq) + H2(g) + Cl2(g)<br>
+                    Giai đoạn 2: khí Cl2 phản ứng với dung dịch NaOH tạo ra nước Javel: Cl2(g) + 2NaOH(aq) → NaCl(aq) + NaClO(aq) + H2O(l)<br>
+                    Một loại nước Javel (có khối lượng riêng 1,15 g/cm³) được bán trên thị trường với chai dung tích 1,0 L có nồng độ NaCIO, NaCl và NaOH lần lượt là 10%; 8% và 0,8%. Để sản xuất 1000 chai nước Javel ở trên cần bao nhiêu kg dung dịch NaCl 18,5% (làm tròn kết quả đến hàng đơn vị)?</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập khối lượng (VD: 1500)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="342"
+                     data-hint="Lưu ý định luật bảo toàn nguyên tố đối với Na. Tính khối lượng Na+ di chuyển qua màng và từ đó tính lượng NaOH sinh ra ở cathode trong 1 giờ."
+                     data-explain="<ul>
+                     <li>Lượng $\ce{NaCl}$ nạp vào Anode 1 giờ: $310 \text{ g/L} \times 1000 \text{ L} = 310.000 \text{ g}$.</li>
+                     <li>Lượng $\ce{NaCl}$ rút ra Anode 1 giờ: $200 \text{ g/L} \times 800 \text{ L} = 160.000 \text{ g}$.</li>
+                     <li>Lượng $\ce{NaCl}$ bị điện phân: $310.000 - 160.000 = 150.000 \text{ g}$.</li>
+                     <li>Số mol $\ce{Na+}$ di chuyển qua màng sang cathode: $n = \frac{150.000}{58,5} \approx 2564,1 \text{ mol}$.</li>
+                     <li>Lượng $\ce{NaOH}$ sinh ra ở cathode: $m_{\ce{NaOH}} = 2564,1 \times 40 \approx 102.564 \text{ g}$.</li>
+                     <li>Lưu lượng dung dịch $\ce{NaOH}$ rút ra là $0,3 \text{ m}^3 = 300 \text{ L}$.</li>
+                     <li>Nồng độ $\ce{NaOH}$: $C = \frac{102564}{300} \approx 341,88 \text{ g/L}$. Làm tròn đến hàng đơn vị là 342.</li>
+                     </ul>">
+                    <p><strong>Câu 6:</strong> Một nhà máy sản xuất NaOH, khí Cl2 và khí H2 hoạt động dựa vào phản ứng điện phân dung dịch NaCl bão hòa có màng bán thẩm (hay màng trao đổi ion).<br>
+                        <img src="Sơ đồ 2.png" alt="Sơ đồ điện phân NaCl có màng ngăn" style="max-width: 100%; height: auto; margin: 15px 0;">
+                    Biết rằng:<br> 
+                    Tại anode: dung dịch muối nạp vào có nồng độ NaCl 310 g/L với lưu lượng (hay tốc độ dòng chảy) 1 m³/h; dung dịch muối rút ra có nồng độ NaCl 200 g/L với lưu lượng 0,8 m³/h.<br>
+                    Tại cathode: nước nạp vào với lưu lượng 0,2 m³/h và dung dịch NaOH rút ra với lưu lượng 0,3 m³/h.<br>
+                    Lưu ý: Trong quá trình điện phân, một phần nước trong dung dịch bay hơi và thoát ra cùng với các khí ở các điện cực.<br>
+                    Nồng độ (theo g/L) của dung dịch NaOH rút ra ở cathode là bao nhiêu? (Không làm tròn các phép tính trung gian, làm tròn kết quả cuối cùng đến hàng đơn vị).</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập con số (VD: 150)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm Đúng/Sai</h3>
+                
+                <div class="interactive-quiz" data-type="tf" data-answer="S,Đ,S,Đ"
+                     data-hint="Hãy nhớ lại môi trường dung dịch tạo thành ở cathode là gì để xét pH. Việc thu NaOH rắn tách khỏi dung dịch muối dựa vào sự khác biệt độ hòa tan chứ không phải chiết."
+                     data-explain="<ul><li><strong>a) Sai:</strong> Ở cathode sinh ra ion $\ce{OH-}$, làm dung dịch có tính kiềm, do đó pH > 7.</li><li><strong>b) Đúng:</strong> Màng ngăn xốp (hoặc màng trao đổi ion) cho ion đi qua nhưng ngăn cản khí $\ce{Cl2}$ ở anode khuếch tán sang tác dụng với $\ce{NaOH}$ ở cathode.</li><li><strong>c) Sai:</strong> $\ce{NaOH}$ rắn được thu từ dung dịch bằng phương pháp kết tinh (cô đặc, làm lạnh để NaCl kết tinh trước do độ hòa tan thay đổi ít theo nhiệt độ), không phải phương pháp chiết.</li><li><strong>d) Đúng:</strong> Số mol electron $n_e = \frac{0,2 \times 1930}{96500} = 0,004$ mol. Số mol $\ce{OH-}$ sinh ra = $n_e = 0,004$ mol. Nồng độ $[\ce{OH-}] = \frac{0,004}{2} = 0,002$ M. Suy ra $pOH = 2,7 \Rightarrow pH = 11,3$.</li></ul>">
+                    <p><strong>Câu 7:</strong> Một nhà máy sản xuất sodium hydroxide (NaOH) và chlorine (Cl2) bằng phương pháp điện phân dung dịch sodium chloride (NaCl) có màng ngăn với điện cực theo phương trình hóa học sau:<br>
+                    $2\ce{NaCl} + 2\ce{H2O} \xrightarrow{\text{đpdd, có màng ngăn}} 2\ce{NaOH} + \ce{Cl2} + \ce{H2}$<br>
+                    Sodium hydroxide rắn thu được bằng cách cô đặc rồi hạ nhiệt độ dung dịch chứa NaOH sau điện phân.</p>
+                    
+                    <p style="font-weight: 600; color: #1e3c72; margin-top: 25px;">Hãy chọn Đúng/Sai cho các phát biểu dưới đây:</p>
+                    
+                    <div class="quiz-options">
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>a) Trong quá trình điện phân, dung dịch ở khu vực cathode có pH < 7.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_a" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_a" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>b) Màng ngăn giúp ngăn phản ứng giữa sodium hydroxide và chlorine trong quá trình điện phân.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_b" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_b" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>c) Sodium hydroxide rắn thu được từ dung dịch chứa NaOH bằng phương pháp chiết.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_c" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_c" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 10px;">
+                            <p>d) Điện phân 2 lít dung dịch NaCl 0,5 M với điện cực trơ, màng ngăn xốp bằng dòng điện có cường độ không đổi 0,2 A. Sau 1930 giây thì dừng điện phân, thu được dung dịch X (giá thiết thể tích dung dịch không đổi). Dung dịch X có pH bằng 11,3.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_d" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_d" value="S"> Sai</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTF(this)">Chấm điểm</button>
+                    <div class="feedback"></div>
+                </div>
+
+            </section>
+        </main>
+
+        <aside class="sidebar" style="flex: 1; min-width: 250px;">
+            <h3 style="text-transform: uppercase;">Danh mục Thí nghiệm</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><a href="experiment1.html">1. Phản ứng Ester hóa</a></li>
+                <li><a href="experiment2.html">2. Phản ứng Nitro hóa</a></li>
+                <li><a href="experiment3.html">3. Chuẩn độ Fe2+ bằng KMnO4</a></li>
+                <li><a href="experiment4.html">4. Phản ứng Tráng bạc</a></li>
+                <li><strong>👉 5. Điện phân dung dịch NaCl</strong></li>
+            </ul>
+        </aside>
+    </div>
+
+<!-- PHẦN FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleFeedback(container, isCorrect, correctAnswer = "") {
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            const feedback = container.querySelector('.feedback');
+            
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🎉 <strong>Tuyệt vời! Kết quả chính xác.</strong><br><div class="explain-box">📖 <strong>Giải thích:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `🤔 <strong>Chưa đúng rồi!</strong> Bạn hãy xem qua gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    let answerText = correctAnswer ? ` Đáp án đúng là <strong>${correctAnswer}</strong>.` : "";
+                    feedback.innerHTML = `🥲 <strong>Vẫn chưa đúng.</strong>${answerText}<br><div class="explain-box">📖 <strong>Cùng xem giải thích nhé:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+
+        function checkMCQ(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer');
+            const selected = container.querySelector('input[type="radio"]:checked');
+            const feedback = container.querySelector('.feedback');
+
+            if (!selected) {
+                feedback.innerHTML = "⚠️ Vui lòng chọn một đáp án trước khi kiểm tra!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            handleFeedback(container, selected.value === correctAnswer, correctAnswer);
+        }
+
+        function checkShort(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer').toLowerCase().trim();
+            const input = container.querySelector('.short-answer-input').value.toLowerCase().trim();
+            const feedback = container.querySelector('.feedback');
+
+            if (input === "") {
+                feedback.innerHTML = "⚠️ Vui lòng nhập câu trả lời!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (input === correctAnswer || input.replace(',', '.') === correctAnswer.replace(',', '.'));
+            handleFeedback(container, isCorrect, correctAnswer);
+        }
+
+        function checkTF(btn) {
+            const container = btn.parentElement;
+            const correctAnswers = container.getAttribute('data-answer').split(',');
+            const radioGroups = [...new Set(Array.from(container.querySelectorAll('input[type="radio"]')).map(el => el.name))];
+            const feedback = container.querySelector('.feedback');
+            
+            let score = 0;
+            let allAnswered = true;
+
+            radioGroups.forEach((groupName, index) => {
+                const selected = container.querySelector(`input[name="${groupName}"]:checked`);
+                if (!selected) allAnswered = false;
+                else if (selected.value === correctAnswers[index]) score++;
+            });
+
+            if (!allAnswered) {
+                feedback.innerHTML = "⚠️ Vui lòng hoàn thành toàn bộ các ý (a, b, c, d) trước khi chấm điểm!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (score === correctAnswers.length);
+            
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🏆 <strong>Xuất sắc! Bạn trả lời đúng toàn bộ ${score}/${correctAnswers.length} ý.</strong><br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `⚠️ <strong>Bạn mới đúng ${score}/${correctAnswers.length} ý.</strong> Cùng kiểm tra lại bằng gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    feedback.innerHTML = `🥲 <strong>Bạn trả lời đúng ${score}/${correctAnswers.length} ý.</strong> Đáp án chuẩn là: <strong>${correctAnswers.join(' - ')}</strong>.<br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

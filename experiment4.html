@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thí nghiệm 4: Phản ứng Tráng bạc</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      MathJax = {
+        loader: {load: ['[tex]/mhchem']},
+        tex: {
+          packages: {'[+]': ['mhchem']},
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Tối ưu UI/UX: Khoảng cách và hiệu ứng khối */
+        .image-placeholder {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .image-placeholder:hover { background-color: #f1f5f9; border-color: #94a3b8; }
+        .image-placeholder i { font-size: 2.5rem; color: #94a3b8; }
+        
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            text-align: center;
+        }
+        .custom-table th { background-color: #4e54c8; color: white; font-weight: 600; }
+        .custom-table tr:nth-child(even) { background-color: #f8fafc; }
+        
+        /* UI Hỗ trợ sư phạm (Hints & Explanations) */
+        .hint-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #5c4000;
+        }
+        .explain-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #0b3d60;
+        }
+        
+        /* Tối ưu khoảng cách trong Quiz */
+        .interactive-quiz {
+            margin-bottom: 30px; 
+            padding: 25px;
+            background: #ffffff;
+            border-left: 4px solid #8f94fb;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .check-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .check-btn:hover {
+            background: #8f94fb;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="display: flex; flex-wrap: wrap; margin: 40px auto; gap: 40px;">
+        
+        <main class="main-content" style="flex: 3; min-width: 0;">
+            
+            <h1>VIDEO 4: PHẢN ỨNG TRÁNG BẠC</h1>
+            <p><strong>Nội dung cốt lõi:</strong> Hóa hữu cơ - Carbohydrate</p>
+
+            <hr>
+
+            <section class="video-section">
+                <h2 style="text-transform: uppercase;">1. Quan sát thí nghiệm</h2>
+                
+                <div class="socratic-block">
+                    <h4 style="text-transform: uppercase;">💡 Gợi ý tư duy (Socratic & 5W1H)</h4>
+                    <p><strong>What & Why:</strong> Hãy quan sát sự hình thành lớp bạc sáng bóng trên thành ống nghiệm. Tại sao phải làm sạch ống nghiệm rất kỹ trước khi tiến hành, và tại sao chỉ nên đun nóng nhẹ (hoặc ngâm nước nóng) mà không được đun sôi sùng sục?</p>
+                </div>
+                
+                <div class="responsive-video" style="padding-bottom: 56.25%; position: relative; margin: 0 auto 30px auto;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/FMJCHP2dP04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi kiểm tra nhanh</h3>
+                
+                <div class="interactive-quiz" data-type="mcq" data-answer="C" 
+                     data-hint="Chú ý đến nhóm chức -CHO của glucose. Khi bị oxi hóa bởi phức bạc amoniac, nó sẽ chuyển thành muối amoni của acid tương ứng." 
+                     data-explain="Phản ứng oxi hóa glucose bằng dung dịch $\ce{AgNO3/NH3}$ tạo ra muối ammonium gluconate ($\ce{CH2OH[CHOH]4COONH4}$). Nhóm $\ce{-CHO}$ bị oxi hóa thành nhóm $\ce{-COONH4}$.">
+                    <p><strong>Câu 1:</strong> Glucose dùng trong công nghiệp để tráng bạc lên bề mặt thuỷ tinh trong sản xuất ruột phích. Glucose phản ứng với thuốc thử Tollens theo phương trình phản ứng sau: $\ce{CH2OH[CHOH]4CH=O + 2[Ag(NH3)2]OH -> X + 2Ag + 3NH3 + H2O}$. Chất X là</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="A"> A. khí carbon dioxide.</label>
+                        <label><input type="radio" name="q1" value="B"> B. ammonium carbonate.</label>
+                        <label><input type="radio" name="q1" value="C"> C. ammonium gluconate.</label>
+                        <label><input type="radio" name="q1" value="D"> D. gluconic acid.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="A"
+                     data-hint="Chất tham gia phản ứng tráng bạc cần phải chứa nhóm chức aldehyde (-CHO) trong cấu tạo phân tử (hoặc dạng mạch hở của nó)."
+                     data-explain="Trong các chất được liệt kê, glucose là hợp chất tạp chức, dạng mạch hở chứa 5 nhóm hydroxyl (-OH) và 1 nhóm aldehyde (-CHO), do đó có khả năng tham gia phản ứng tráng bạc.">
+                    <p><strong>Câu 2:</strong> Để tráng một lớp bạc lên ruột phích, người ta cho chất Z phản ứng với lượng dư dung dịch $\ce{AgNO3}$ trong $\ce{NH3}$, đun nóng. Chất Z là</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="A"> A. glucose</label>
+                        <label><input type="radio" name="q2" value="B"> B. ethanol</label>
+                        <label><input type="radio" name="q2" value="C"> C. acetic acid</label>
+                        <label><input type="radio" name="q2" value="D"> D. saccharose</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="analysis-section">
+                <h2 style="text-transform: uppercase;">2. Phân tích và Tính toán</h2>
+
+                <div class="feynman-block" style="margin-bottom: 40px;">
+                    <h4 style="text-transform: uppercase;">👨‍🏫 Tập làm Thầy giáo (Feynman Technique)</h4>
+                    <p>Hãy mô tả lại các bước pha chế thuốc thử Tollens (hòa tan kết tủa bằng $\ce{NH3}$). Trong phản ứng với Tollens, glucose đóng vai trò là chất gì và nhóm chức nào trong phân tử glucose quyết định tính chất hóa học này?</p>
+                    <textarea placeholder="Ví dụ: Đầu tiên nhỏ NH3 vào AgNO3 sẽ xuất hiện kết tủa nâu xám, sau đó cho thêm NH3 thì kết tủa tan tạo phức. Glucose đóng vai trò là chất khử nhờ có nhóm -CHO..."></textarea>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm nhiều lựa chọn</h3>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="B"
+                     data-hint="Đọc kỹ tính chất mà phản ứng tráng gương chứng minh. Liệu nó chứng minh nhiều nhóm -OH kề nhau (polyalcohol) hay chứng minh nhóm -CHO?"
+                     data-explain="Phản ứng sinh ra lớp bạc kim loại (phản ứng tráng bạc) là đặc trưng để nhận biết nhóm chức aldehyde ($\ce{-CHO}$). Để chứng minh tính chất của polyalcohol (nhiều nhóm -OH kề nhau), người ta dùng phản ứng hòa tan $\ce{Cu(OH)2}$ ở nhiệt độ thường tạo dung dịch màu xanh lam. Do đó phát biểu B là sai.">
+                    <p><strong>Câu 3:</strong> Tiến hành thí nghiệm theo các bước sau:<br>
+                    Bước 1: Cho 1 mL dung dịch $\ce{AgNO3}$ 1% vào ống nghiệm sạch.<br>
+                    Bước 2: Thêm từ từ từng giọt dung dịch $\ce{NH3}$, lắc đều cho đến khi kết tủa tan hết.<br>
+                    Bước 3: Thêm tiếp khoảng 1 mL dung dịch glucose 1% vào ống nghiệm; đun nóng nhẹ.<br><br>
+                    Phát biểu nào sau đây sai?</p>
+                    
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="A"> A. Sản phẩm hữu cơ thu được sau bước 3 là ammonium gluconate.</label>
+                        <label><input type="radio" name="q3" value="B"> B. Thí nghiệm trên chứng minh glucose có tính chất của polyalcohol.</label>
+                        <label><input type="radio" name="q3" value="C"> C. Sau bước 3, có lớp bạc kim loại bám trên thành ống nghiệm.</label>
+                        <label><input type="radio" name="q3" value="D"> D. Trong phản ứng ở bước 3, glucose đóng vai trò là chất khử.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm trả lời ngắn</h3>
+
+                <div class="interactive-quiz" data-type="short" data-answer="3"
+                     data-hint="Phân tích từng phát biểu. Chú ý sản phẩm hữu cơ sinh ra có phải là sorbitol không? Sorbitol được sinh ra từ phản ứng nào?"
+                     data-explain="Có 3 phát biểu đúng là (2), (3), (4).<br>
+                     - <strong>Phát biểu 1 Sai</strong> vì sản phẩm sinh ra là ammonium gluconate. Sorbitol (sobitol) là sản phẩm của phản ứng cộng hydrogen ($\ce{H2}$) vào glucose.">
+                    <p><strong>Câu 4:</strong> Tiến hành thí nghiệm theo các bước sau:<br>
+                    Bước 1: Cho 1 mL dung dịch $\ce{AgNO3}$ 1% vào ống nghiệm sạch.<br>
+                    Bước 2: Thêm từ từ từng giọt dung dịch $\ce{NH3}$, lắc đều cho đến khi kết tủa tan hết.<br>
+                    Bước 3: Thêm tiếp khoảng 1 mL dung dịch glucose 1% vào ống nghiệm, đun nóng nhẹ.<br>
+                    Cho các phát biểu sau:<br>
+                    1. Sản phẩm hữu cơ thu được sau bước 3 là sobitol.<br>
+                    2. Thí nghiệm trên chứng minh glucose có tính chất của aldehyde.<br>
+                    3. Sau bước 3, có lớp bạc kim loại bám trên thành ống nghiệm.<br>
+                    4. Ở bước 3, có thể thay việc đun nóng nhẹ bằng cách ngâm ống nghiệm trong nước nóng.<br>
+                    Số phát biểu đúng là:</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập số lượng phát biểu đúng...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="21,6"
+                     data-hint="Tỉ lệ phản ứng: 1 mol Glucose sinh ra 2 mol Ag. $M_{glucose} = 180$, $M_{Ag} = 108$."
+                     data-explain="<ul>
+                     <li>Số mol glucose: $n_{\ce{C6H12O6}} = \frac{18,0}{180} = 0,1$ mol.</li>
+                     <li>Phương trình bán phản ứng cơ bản: $\ce{Glucose -> 2Ag}$</li>
+                     <li>Suy ra số mol Ag: $n_{\ce{Ag}} = 2 \times 0,1 = 0,2$ mol.</li>
+                     <li>Khối lượng bạc thu được: $m = 0,2 \times 108 = 21,6$ gam.</li>
+                     </ul>">
+                    <p><strong>Câu 5:</strong> Cho 18,0 gam glucose phản ứng hoàn toàn với lượng dư dung dịch $\ce{AgNO3}$ trong $\ce{NH3}$ (đun nóng), thu được m gam Ag. Giá trị của m là</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập con số (VD: 10,8)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="0,2"
+                     data-hint="Tính số mol Ag kết tủa. Dựa vào tỉ lệ $n_{glucose} : n_{Ag} = 1 : 2$ để tìm số mol glucose, từ đó tính nồng độ mol."
+                     data-explain="<ul>
+                     <li>Số mol Ag kết tủa: $n_{\ce{Ag}} = \frac{2,16}{108} = 0,02$ mol.</li>
+                     <li>Do 1 phân tử glucose tráng ra 2 nguyên tử Ag nên: $n_{\text{glucose}} = \frac{n_{\ce{Ag}}}{2} = \frac{0,02}{2} = 0,01$ mol.</li>
+                     <li>Thể tích dung dịch là $50 \text{ mL} = 0,05 \text{ L}$.</li>
+                     <li>Nồng độ mol của dung dịch glucose: $C_M = \frac{n}{V} = \frac{0,01}{0,05} = 0,2$ M.</li>
+                     </ul>">
+                    <p><strong>Câu 6:</strong> Cho 50 mL dung dịch glucose chưa rõ nồng độ tác dụng với một lượng dư $\ce{AgNO3}$ trong dung dịch $\ce{NH3}$ thu được 2,16 gam bạc kết tủa. Nồng độ mol (hoặc mol/l) của dung dịch glucose đã dùng là</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập con số (VD: 0,1)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm Đúng/Sai</h3>
+
+                <div class="interactive-quiz" data-type="tf" data-answer="Đ,S,S,Đ"
+                     data-hint="Phân tích kĩ hiện tượng và sản phẩm ở từng bước. Nhớ lại thành phần của nước mía là gì và áp dụng công thức tính khối lượng lớp bạc: m = D.V = D.(S.h)."
+                     data-explain="<ul><li><strong>a) Đúng:</strong> Ở bước 2, kết tủa tan sinh ra phức chất $\ce{[Ag(NH3)2]OH}$ tan trong dung dịch.</li><li><strong>b) Sai:</strong> Phản ứng tráng bạc chứng minh glucose có chứa nhóm chức aldehyde ($\ce{-CHO}$). Tính chất của polyalcohol được chứng minh bằng phản ứng hòa tan $\ce{Cu(OH)2}$.</li><li><strong>c) Sai:</strong> Nước mía có thành phần chính là saccharose, không có tính khử nên không tham gia phản ứng tráng bạc.</li><li><strong>d) Đúng:</strong> Thể tích 1 lớp bạc $V = 0,35 \times 10^4 \times 0,1 \times 10^{-4} = 0,035 \text{ cm}^3 \Rightarrow m_{\text{1 gương}} = 0,035 \times 10,49 = 0,36715 \text{ gam}$. Khối lượng Ag thu được thực tế $m_{\ce{Ag}} = \frac{26,77}{180} \times 2 \times 108 \times 80\% = 25,6992 \text{ gam}$. Số lượng gương = $25,6992 \div 0,36715 \approx 70$ chiếc.</li></ul>">
+                    <p><strong>Câu 7:</strong> Để chế tạo gương soi, ruột phích, người ta phủ lên thủy tinh một lớp bạc mỏng. Lớp bạc này thường được tạo thành từ phản ứng tráng bạc của glucose theo các bước sau:<br>
+                    Bước 1: Cho 1 mL dung dịch $\ce{AgNO3}$ 1% vào ống nghiệm sạch.<br>
+                    Bước 2: Thêm từ từ từng giọt dung dịch $\ce{NH3}$ 5%, lắc đều cho đến khi kết tủa vừa tan hết.<br>
+                    Bước 3: Thêm tiếp vào ống nghiệm khoảng 1 mL dung dịch glucozơ 2%; lắc đều rồi để ống nghiệm cố định trong cốc nước nóng.</p>
+
+                    <p style="font-weight: 600; color: #1e3c72; margin-top: 25px;">Hãy chọn Đúng/Sai cho các phát biểu dưới đây:</p>
+                    
+                    <div class="quiz-options">
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>a) Sau bước 2, trong dung dịch có chứa phức chất $\ce{[Ag(NH3)2]OH}$.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_a" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_a" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>b) Thí nghiệm trên chứng minh glucose có tính chất của polyalcohol.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_b" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_b" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>c) Nếu thay thế dung dịch glucose bằng dung dịch nước mía thì phản ứng tráng bạc vẫn xảy ra.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_c" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_c" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 10px;">
+                            <p>d) Để tráng một số lượng gương soi có diện tích bề mặt 0,35 m² với độ dày 0,1 µm người ta đun nóng dung dịch chứa 26,77 gam glucose với một lượng dung dịch silver nitrate trong ammonia. Biết khối lượng riêng của silver là 10,49 g/cm³, hiệu suất phản ứng tráng gương là 80% (tính theo glucose). Số lượng gương soi tối đa sản xuất được khoảng 70 chiếc.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_d" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_d" value="S"> Sai</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTF(this)">Chấm điểm</button>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar" style="flex: 1; min-width: 250px;">
+            <h3 style="text-transform: uppercase;">Danh mục Thí nghiệm</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><a href="experiment1.html">1. Phản ứng Ester hóa</a></li>
+                <li><a href="experiment2.html">2. Phản ứng Nitro hóa</a></li>
+                <li><a href="experiment3.html">3. Chuẩn độ Fe2+ bằng KMnO4</a></li>
+                <li><strong>👉 4. Phản ứng Tráng bạc</strong></li>
+                <li><a href="experiment5.html">5. Điện phân dung dịch NaCl</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleFeedback(container, isCorrect, correctAnswer = "") {
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            const feedback = container.querySelector('.feedback');
+            
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🎉 <strong>Tuyệt vời! Kết quả chính xác.</strong><br><div class="explain-box">📖 <strong>Giải thích:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `🤔 <strong>Chưa đúng rồi!</strong> Bạn hãy xem qua gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    let answerText = correctAnswer ? ` Đáp án đúng là <strong>${correctAnswer}</strong>.` : "";
+                    feedback.innerHTML = `🥲 <strong>Vẫn chưa đúng.</strong>${answerText}<br><div class="explain-box">📖 <strong>Cùng xem giải thích nhé:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+
+        function checkMCQ(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer');
+            const selected = container.querySelector('input[type="radio"]:checked');
+            const feedback = container.querySelector('.feedback');
+
+            if (!selected) {
+                feedback.innerHTML = "⚠️ Vui lòng chọn một đáp án trước khi kiểm tra!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            handleFeedback(container, selected.value === correctAnswer, correctAnswer);
+        }
+
+        function checkShort(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer').toLowerCase().trim();
+            const input = container.querySelector('.short-answer-input').value.toLowerCase().trim();
+            const feedback = container.querySelector('.feedback');
+
+            if (input === "") {
+                feedback.innerHTML = "⚠️ Vui lòng nhập câu trả lời!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (input === correctAnswer || input.replace(',', '.') === correctAnswer.replace(',', '.'));
+            handleFeedback(container, isCorrect, correctAnswer);
+        }
+
+        function checkTF(btn) {
+            const container = btn.parentElement;
+            const correctAnswers = container.getAttribute('data-answer').split(',');
+            const radioGroups = [...new Set(Array.from(container.querySelectorAll('input[type="radio"]')).map(el => el.name))];
+            const feedback = container.querySelector('.feedback');
+            
+            let score = 0;
+            let allAnswered = true;
+
+            radioGroups.forEach((groupName, index) => {
+                const selected = container.querySelector(`input[name="${groupName}"]:checked`);
+                if (!selected) allAnswered = false;
+                else if (selected.value === correctAnswers[index]) score++;
+            });
+
+            if (!allAnswered) {
+                feedback.innerHTML = "⚠️ Vui lòng hoàn thành toàn bộ các ý (a, b, c, d) trước khi chấm điểm!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (score === correctAnswers.length);
+            
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🏆 <strong>Xuất sắc! Bạn trả lời đúng toàn bộ ${score}/${correctAnswers.length} ý.</strong><br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `⚠️ <strong>Bạn mới đúng ${score}/${correctAnswers.length} ý.</strong> Cùng kiểm tra lại bằng gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    feedback.innerHTML = `🥲 <strong>Bạn trả lời đúng ${score}/${correctAnswers.length} ý.</strong> Đáp án chuẩn là: <strong>${correctAnswers.join(' - ')}</strong>.<br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

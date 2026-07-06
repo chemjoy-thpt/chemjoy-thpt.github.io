@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ký hiệu và thuật ngữ</title>
+    <!-- File CSS giả định (sử dụng CSS Grid để dàn layout bảng tuần hoàn) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <style>
+        /* Tùy chỉnh Hero Section của trang Từ điển */
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(30, 60, 114, 0.15);
+        }
+        .page-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        /* Thanh tìm kiếm hiện đại */
+        .search-bar-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .search-input {
+            width: 100%;
+            max-width: 450px;
+            padding: 14px 25px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            border: 2px solid #ff9f43;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .search-btn {
+            background-color: #ff9f43;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 159, 67, 0.3);
+            transition: all 0.3s ease;
+        }
+        .search-btn:hover {
+            background-color: #ff8f20;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 159, 67, 0.4);
+        }
+
+        /* Khối danh mục (Card style) */
+        .symbol-category {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+            border: 1px solid #f1f2f6;
+            transition: transform 0.3s ease;
+        }
+        .symbol-category:hover {
+            box-shadow: 0 12px 25px rgba(42, 82, 152, 0.08);
+        }
+        .section-heading h3 {
+            color: #1e3c72;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-bottom: 3px dashed #e1e8ed;
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+        .section-heading p {
+            color: #57606f;
+            margin: 15px 0 25px 0;
+            line-height: 1.6;
+        }
+
+        /* Bảng hiển thị đẹp mắt */
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .symbol-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e1e8ed;
+        }
+        .symbol-table th, .symbol-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #f1f2f6;
+            vertical-align: middle;
+        }
+        .symbol-table th {
+            background-color: #f8fafc;
+            color: #2c3e50;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        .symbol-table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+        .symbol-table tbody tr:hover {
+            background-color: #fdfbf7;
+        }
+        .symbol-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Highlight cho cột Ký hiệu (Pill badge) */
+        .symbol-mark {
+            white-space: nowrap;
+        }
+        .symbol-mark span.math-wrapper {
+            background-color: #fff3e0;
+            color: #d35400;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            border: 1px solid #ffe0b2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* Mẹo ghi nhớ (Study Tips Box) */
+        .study-tips-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 35px;
+            border-radius: 16px;
+            margin: 50px 0;
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.1);
+            border-left: 8px solid #4caf50;
+        }
+        .tips-content h3 {
+            color: #2e7d32;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .tips-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .tips-content ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: #1b5e20;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        .tips-content ul li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <div class="header-content">
+                <h2>KÝ HIỆU VÀ THUẬT NGỮ</h2>
+                <p>Khắc phục ngay rào cản "đọc không hiểu đề"! Hệ thống ký hiệu Hóa học hiện nay đã được đồng bộ hoàn toàn theo chuẩn quốc tế IUPAC. Nắm vững bảng danh mục này là bước đầu tiên để bạn đọc hiểu mọi tài liệu, phương trình và hiện tượng thực tế một cách chuẩn khoa học.</p>
+            </div>
+            
+            <div class="search-bar-container">
+                <input type="text" placeholder="Nhập ký hiệu hoặc tên đại lượng" class="search-input">
+                <button class="search-btn">Tra cứu</button>
+            </div>
+        </section>
+
+        <section class="symbol-category">
+            <div class="section-heading">
+                <h3>1. KÝ HIỆU TRẠNG THÁI CỦA CHẤT (STATES OF MATTER)</h3>
+                <p>Ký hiệu bắt buộc phải có trong các phương trình nhiệt hóa học và điện hóa học để mô tả chính xác bối cảnh của phản ứng.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="symbol-table">
+                    <thead>
+                        <tr>
+                            <th>Ký hiệu</th>
+                            <th>Ý nghĩa (Tiếng Việt)</th>
+                            <th>Thuật ngữ Tiếng Anh</th>
+                            <th>Ví dụ thực tiễn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$(s)$</span></td>
+                            <td>Trạng thái Rắn</td>
+                            <td>Solid</td>
+                            <td>$Fe_{(s)}$, $NaCl_{(s)}$ - Muối ăn dạng tinh thể</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$(l)$</span></td>
+                            <td>Trạng thái Lỏng</td>
+                            <td>Liquid</td>
+                            <td>$H_2O_{(l)}$, $Br_{2(l)}$ - Nước hoặc Brom ở thể lỏng tinh khiết</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$(g)$</span></td>
+                            <td>Trạng thái Khí</td>
+                            <td>Gas</td>
+                            <td>$O_{2(g)}$, $CO_{2(g)}$ - Khí carbon dioxide sủi bọt từ nước ngọt</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$(aq)$</span></td>
+                            <td>Dung dịch (hòa tan trong nước)</td>
+                            <td>Aqueous</td>
+                            <td>$NaCl_{(aq)}$ - Nước muối sinh lý, $HCl_{(aq)}$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="symbol-category">
+            <div class="section-heading">
+                <h3>2. NHIỆT HÓA HỌC (THERMODYNAMICS)</h3>
+                <p>Các đại lượng đo lường sự tỏa nhiệt hay thu nhiệt của phản ứng — chìa khóa để hiểu về nhiên liệu, năng lượng đốt cháy và động cơ.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="symbol-table">
+                    <thead>
+                        <tr>
+                            <th>Ký hiệu</th>
+                            <th>Tên đại lượng</th>
+                            <th>Đơn vị chuẩn</th>
+                            <th>Giải thích / Ứng dụng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$\Delta_r H_{298}^\circ$</span></td>
+                            <td>Biến thiên enthalpy chuẩn của phản ứng</td>
+                            <td>kJ hoặc kJ/mol</td>
+                            <td>Đo lường lượng nhiệt tỏa ra hoặc thu vào của một phản ứng ở điều kiện chuẩn (298K, 1 bar). Dấu âm (-) là tỏa nhiệt, dấu dương (+) là thu nhiệt.</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$\Delta_f H_{298}^\circ$</span></td>
+                            <td>Enthalpy tạo thành chuẩn</td>
+                            <td>kJ/mol</td>
+                            <td>Nhiệt lượng kèm theo quá trình tạo ra 1 mol chất từ các đơn chất bền vững nhất. Dùng để tính toán năng lượng của phản ứng.</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$E_b$</span></td>
+                            <td>Năng lượng liên kết</td>
+                            <td>kJ/mol</td>
+                            <td>Năng lượng cần thiết để phá vỡ 1 mol liên kết hóa học. Liên kết càng bền, $E_b$ càng lớn.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="symbol-category">
+            <div class="section-heading">
+                <h3 style="text-transform: uppercase;">3. ĐỘNG HÓA HỌC & CÂN BẰNG HÓA HỌC (KINETICS & EQUILIBRIUM)</h3>
+                <p>Dùng để tính toán phản ứng xảy ra nhanh hay chậm, và mức độ phản ứng đạt được tối đa là bao nhiêu — ứng dụng cực mạnh trong công nghiệp sản xuất hóa chất.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="symbol-table">
+                    <thead>
+                        <tr>
+                            <th>Ký hiệu</th>
+                            <th>Tên đại lượng</th>
+                            <th>Đặc điểm cần lưu ý</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$v$</span></td>
+                            <td>Tốc độ phản ứng</td>
+                            <td>Đo bằng sự biến thiên nồng độ chất phản ứng hoặc sản phẩm trong một đơn vị thời gian (VD: mol/(L.s)).</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$k$</span></td>
+                            <td>Hằng số tốc độ phản ứng</td>
+                            <td>Chỉ phụ thuộc vào bản chất chất phản ứng và nhiệt độ. Giá trị $k$ càng lớn, phản ứng xảy ra càng nhanh.</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$E_a$</span></td>
+                            <td>Năng lượng hoạt hóa</td>
+                            <td>"Rào cản" năng lượng tối thiểu để phản ứng có thể xảy ra. Chất xúc tác giúp làm giảm $E_a$.</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$K_c$</span></td>
+                            <td>Hằng số cân bằng (theo nồng độ)</td>
+                            <td>Đặc trưng cho hệ cân bằng thuận nghịch. $K_c$ chỉ phụ thuộc vào nhiệt độ.</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$\alpha$</span></td>
+                            <td>Độ điện li</td>
+                            <td>Tỷ lệ phần trăm số phân tử phân li thành ion trên tổng số phân tử hòa tan (áp dụng cho chuyên đề dung dịch chất điện li).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="symbol-category">
+            <div class="section-heading">
+                <h3 style="text-transform: uppercase;">4. Điện Hóa Học (Electrochemistry)</h3>
+                <p>Những ký hiệu gắn liền với việc nghiên cứu pin, ắc quy và các quá trình điện phân chống ăn mòn kim loại.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="symbol-table">
+                    <thead>
+                        <tr>
+                            <th>Ký hiệu</th>
+                            <th>Tên đại lượng</th>
+                            <th>Đơn vị</th>
+                            <th>Ý nghĩa thực tiễn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$E^\circ$</span></td>
+                            <td>Thế điện cực chuẩn</td>
+                            <td>V (Volt)</td>
+                            <td>Đại lượng đặc trưng cho khả năng nhường hoặc nhận electron của một cặp oxi hóa - khử. Dùng để dự đoán chiều phản ứng.</td>
+                        </tr>
+                        <tr>
+                            <td class="symbol-mark"><span class="math-wrapper">$E_{\text{pin}}^\circ$</span></td>
+                            <td>Sức điện động chuẩn của pin điện hóa</td>
+                            <td>V (Volt)</td>
+                            <td>Đo lường "sức mạnh" của một viên pin (VD: Pin điện thoại Lithium-ion có sức điện động khoảng 3.7V - 4.2V). Tính bằng hiệu số thế điện cực chuẩn của cathode và anode.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

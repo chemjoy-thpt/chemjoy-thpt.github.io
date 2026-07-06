@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng tuần hoàn các nguyên tố hóa học</title>
+    <!-- File CSS giả định (sử dụng CSS Grid để dàn layout bảng tuần hoàn) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PHẦN HEADER -->
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="header-content">
+                <h2>BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HÓA HỌC</h2>
+                <p>Mỗi nguyên tố không chỉ là một ô vuông khô khan, mà là một câu chuyện về cách vũ trụ vận hành. Bấm vào bất kỳ nguyên tố nào để mở khóa bí mật ứng dụng và các cảnh báo an toàn thực tế nhé!</p>
+            </div>
+        </section>
+
+        <section class="element-info-panel" id="info-panel">
+            <div class="panel-header">
+                <div class="element-badge">
+                    <span class="badge-z">6</span>
+                    <h2 class="badge-symbol">C</h2>
+                </div>
+                <div class="element-titles">
+                    <h3 id="panel-name">Carbon</h3>
+                    <p><strong>Cấu hình electron:</strong> <span id="panel-e-config">[He] 2s² 2p²</span></p>
+                </div>
+            </div>
+            
+            <div class="practical-insights">
+                <article class="insight-card use-card">
+                    <h4 style="text-transform: uppercase;">🛠 Ứng dụng thực tiễn</h4>
+                    <p id="panel-use">Là nền tảng của sự sống và hóa hữu cơ. Ứng dụng từ ruột bút chì (graphite), trang sức (kim cương) đến vật liệu composite siêu nhẹ trong hàng không.</p>
+                </article>
+                <article class="insight-card toxic-card">
+                    <h4 style="text-transform: uppercase;">⚠️ Cảnh báo an toàn & Độc tính</h4>
+                    <p id="panel-toxic">Bản thân Carbon nguyên chất an toàn. Tuy nhiên, khí CO gây ngạt tử vong nhanh chóng, còn CO2 là nguyên nhân chính gây hiệu ứng nhà kính.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="periodic-table-wrapper">
+            <div class="periodic-table-grid">
+                
+                <div class="element nonmetal" style="grid-column: 1;" data-z="1" data-symbol="H" data-name="Hydrogen" data-e="1s¹" data-use="Nhiên liệu tên lửa, tổng hợp ammonia (phân bón), pin nhiên liệu xe hơi sạch." data-toxic="Cực kỳ dễ cháy nổ khi tiếp xúc với không khí.">
+                    <span class="z">1</span><span class="sym">H</span>
+                </div>
+                <div class="element noble-gas" style="grid-column: 18;" data-z="2" data-symbol="He" data-name="Helium" data-e="1s²" data-use="Bơm khinh khí cầu, làm mát nam châm siêu dẫn trong máy chụp MRI y tế." data-toxic="Trơ hoàn toàn, không độc. Nhưng hít nhiều gây ngạt do chiếm chỗ của oxy.">
+                    <span class="z">2</span><span class="sym">He</span>
+                </div>
+
+                <div class="element alkali" style="grid-column: 1;" data-z="3" data-symbol="Li" data-name="Lithium" data-e="[He] 2s¹" data-use="Thành phần lõi của pin sạc (Lithium-ion) dùng trong điện thoại, laptop, xe điện." data-toxic="Kim loại Li phản ứng nổ với nước, gây bỏng da nghiêm trọng.">
+                    <span class="z">3</span><span class="sym">Li</span>
+                </div>
+                <div class="element alkaline" data-z="4" data-symbol="Be" data-name="Beryllium" data-e="[He] 2s²" data-use="Hợp kim siêu bền nhẹ cho vệ tinh vũ trụ, tên lửa và cửa sổ tia X." data-toxic="Cực độc! Hít bụi Be gây bệnh phổi không thể chữa khỏi (Berylliosis).">
+                    <span class="z">4</span><span class="sym">Be</span>
+                </div>
+                <div class="element metalloid" style="grid-column: 13;" data-z="5" data-symbol="B" data-name="Boron" data-e="[He] 2s² 2p¹" data-use="Làm kính chịu nhiệt (Borosilicate ở PTN), thuốc sát trùng, sợi thủy tinh." data-toxic="Nuốt lượng lớn hợp chất Boron có thể gây ngộ độc tiêu hóa.">
+                    <span class="z">5</span><span class="sym">B</span>
+                </div>
+                <div class="element nonmetal" data-z="6" data-symbol="C" data-name="Carbon" data-e="[He] 2s² 2p²" data-use="Nền tảng sự sống. Graphene, kim cương, than đá, sợi carbon siêu bền." data-toxic="Khí CO sinh ra khi đốt cháy không hoàn toàn là sát thủ thầm lặng gây ngạt.">
+                    <span class="z">6</span><span class="sym">C</span>
+                </div>
+                <div class="element nonmetal" data-z="7" data-symbol="N" data-name="Nitrogen" data-e="[He] 2s² 2p³" data-use="Chiếm 78% khí quyển, phân bón Urea, chất bảo quản thực phẩm, thuốc nổ." data-toxic="Khí N2 không độc, nhưng nếu thay thế hoàn toàn oxy trong phòng kín sẽ gây ngạt.">
+                    <span class="z">7</span><span class="sym">N</span>
+                </div>
+                <div class="element nonmetal" data-z="8" data-symbol="O" data-name="Oxygen" data-e="[He] 2s² 2p⁴" data-use="Duy trì sự sống, hỗ trợ sự cháy, luyện thép, hàn cắt kim loại." data-toxic="An toàn. Tuy nhiên hít oxy nguyên chất 100% lâu ngày gây tổn thương phổi.">
+                    <span class="z">8</span><span class="sym">O</span>
+                </div>
+                <div class="element halogen" data-z="9" data-symbol="F" data-name="Fluorine" data-e="[He] 2s² 2p⁵" data-use="Ngừa sâu răng (Fluoride), chất chống dính Teflon cho chảo, kem đánh răng." data-toxic="Khí F2 màu vàng nhạt cực độc, ăn mòn mạnh, làm bỏng đường hô hấp.">
+                    <span class="z">9</span><span class="sym">F</span>
+                </div>
+                <div class="element noble-gas" data-z="10" data-symbol="Ne" data-name="Neon" data-e="[He] 2s² 2p⁶" data-use="Đèn quảng cáo Neon (phát ánh sáng đỏ cam rực rỡ), laser khí." data-toxic="Khí trơ, hoàn toàn không độc hại.">
+                    <span class="z">10</span><span class="sym">Ne</span>
+                </div>
+
+                <div class="element alkali" style="grid-column: 1;" data-z="11" data-symbol="Na" data-name="Sodium" data-e="[Ne] 3s¹" data-use="Muối ăn (NaCl), bột nở (NaHCO3), xút (NaOH), đèn cao áp ánh sáng vàng." data-toxic="Na kim loại cháy nổ khi gặp nước. Ăn nhiều muối gây cao huyết áp.">
+                    <span class="z">11</span><span class="sym">Na</span>
+                </div>
+                <div class="element alkaline" data-z="12" data-symbol="Mg" data-name="Magnesium" data-e="[Ne] 3s²" data-use="Hợp kim làm vỏ laptop siêu nhẹ, lõi diệp lục cây xanh, pháo hoa (sáng trắng)." data-toxic="Bột Mg bắt lửa cực mạnh tạo nhiệt độ cao, không thể dập bằng nước hay CO2.">
+                    <span class="z">12</span><span class="sym">Mg</span>
+                </div>
+                <div class="element post-transition" style="grid-column: 13;" data-z="13" data-symbol="Al" data-name="Aluminium" data-e="[Ne] 3s² 3p¹" data-use="Giấy bạc bọc thực phẩm, lon nước ngọt, khung cửa sổ, vỏ máy bay." data-toxic="An toàn trong đời sống, nhưng phơi nhiễm bụi nhôm lâu dài gây hại phổi.">
+                    <span class="z">13</span><span class="sym">Al</span>
+                </div>
+                <div class="element metalloid" data-z="14" data-symbol="Si" data-name="Silicon" data-e="[Ne] 3s² 3p²" data-use="Trái tim của thung lũng Silicon: chip máy tính, pin năng lượng mặt trời, thủy tinh." data-toxic="Bụi tinh thể silica hít vào phổi lâu ngày gây bệnh bụi phổi (Silicosis).">
+                    <span class="z">14</span><span class="sym">Si</span>
+                </div>
+                <div class="element nonmetal" data-z="15" data-symbol="P" data-name="Phosphorus" data-e="[Ne] 3s² 3p³" data-use="Phân lân (NPK), vỏ bao diêm (P đỏ), cấu trúc DNA và xương cốt." data-toxic="P trắng cực độc, tự bốc cháy trong không khí và gây bỏng tận xương.">
+                    <span class="z">15</span><span class="sym">P</span>
+                </div>
+                <div class="element nonmetal" data-z="16" data-symbol="S" data-name="Sulfur" data-e="[Ne] 3s² 3p⁴" data-use="Sản xuất acid sulfuric (H2SO4), lưu hóa cao su lốp xe, thuốc diệt nấm." data-toxic="Khí SO2 (từ việc đốt than) gây ho, hen suyễn và mưa acid.">
+                    <span class="z">16</span><span class="sym">S</span>
+                </div>
+                <div class="element halogen" data-z="17" data-symbol="Cl" data-name="Chlorine" data-e="[Ne] 3s² 3p⁵" data-use="Khử trùng nước máy/hồ bơi, nhựa PVC, nước tẩy Javel." data-toxic="Khí Cl2 màu vàng lục cực độc, từng được dùng làm vũ khí hóa học thế chiến I.">
+                    <span class="z">17</span><span class="sym">Cl</span>
+                </div>
+                <div class="element noble-gas" data-z="18" data-symbol="Ar" data-name="Argon" data-e="[Ne] 3s² 3p⁶" data-use="Bơm vào bóng đèn sợi đốt chống cháy dây tóc, khí bảo vệ hàn TIG." data-toxic="Trơ và an toàn.">
+                    <span class="z">18</span><span class="sym">Ar</span>
+                </div>
+
+                <div class="element alkali" style="grid-column: 1;" data-z="19" data-symbol="K" data-name="Potassium" data-e="[Ar] 4s¹" data-use="Phân bón Kali, duy trì nhịp tim con người, xà phòng mềm." data-toxic="Phản ứng bốc cháy mãnh liệt với nước tạo dung dịch kiềm ăn mòn.">
+                    <span class="z">19</span><span class="sym">K</span>
+                </div>
+                <div class="element alkaline" data-z="20" data-symbol="Ca" data-name="Calcium" data-e="[Ar] 4s²" data-use="Cấu tạo xương và răng, xi măng, đá vôi xây dựng." data-toxic="An toàn. Bụi vôi sống (CaO) khi gặp nước (mồ hôi) gây bỏng nhiệt.">
+                    <span class="z">20</span><span class="sym">Ca</span>
+                </div>
+                <div class="element transition" data-z="21" data-symbol="Sc" data-name="Scandium" data-e="[Ar] 3d¹ 4s²" data-use="Khung xe đạp đua siêu nhẹ, gậy bóng chày, đèn cao áp cường độ cao.">
+                    <span class="z">21</span><span class="sym">Sc</span>
+                </div>
+                <div class="element transition" data-z="22" data-symbol="Ti" data-name="Titanium" data-e="[Ar] 3d² 4s²" data-use="Khớp xương/răng nhân tạo, vỏ tàu ngầm, máy bay (siêu bền, chống ăn mòn).">
+                    <span class="z">22</span><span class="sym">Ti</span>
+                </div>
+                <div class="element transition" data-z="23" data-symbol="V" data-name="Vanadium" data-e="[Ar] 3d³ 4s²" data-use="Làm thép không gỉ cường độ cao chế tạo cờ lê, trục xe, lò xo.">
+                    <span class="z">23</span><span class="sym">V</span>
+                </div>
+                <div class="element transition" data-z="24" data-symbol="Cr" data-name="Chromium" data-e="[Ar] 3d⁵ 4s¹" data-use="Thép không gỉ (Inox), mạ bóng vòi nước, cản xe hơi, tạo màu đỏ rubi.">
+                    <span class="z">24</span><span class="sym">Cr</span>
+                </div>
+                <div class="element transition" data-z="25" data-symbol="Mn" data-name="Manganese" data-e="[Ar] 3d⁵ 4s²" data-use="Hợp kim thép đường ray xe lửa, pin khô kiềm, chất xúc tác (MnO2).">
+                    <span class="z">25</span><span class="sym">Mn</span>
+                </div>
+                <div class="element transition" data-z="26" data-symbol="Fe" data-name="Iron" data-e="[Ar] 3d⁶ 4s²" data-use="Cốt lõi ngành xây dựng (Sắt thép), vận chuyển oxy trong tế bào máu hồng cầu.">
+                    <span class="z">26</span><span class="sym">Fe</span>
+                </div>
+                <div class="element transition" data-z="27" data-symbol="Co" data-name="Cobalt" data-e="[Ar] 3d⁷ 4s²" data-use="Chế tạo pin Lithium-ion, nam châm cực mạnh, thủy tinh màu xanh lam biển.">
+                    <span class="z">27</span><span class="sym">Co</span>
+                </div>
+                <div class="element transition" data-z="28" data-symbol="Ni" data-name="Nickel" data-e="[Ar] 3d⁸ 4s²" data-use="Chế tạo tiền xu, thép không gỉ, dây mayso lò sưởi, pin NiMH.">
+                    <span class="z">28</span><span class="sym">Ni</span>
+                </div>
+                <div class="element transition" data-z="29" data-symbol="Cu" data-name="Copper" data-e="[Ar] 3d¹⁰ 4s¹" data-use="Lõi dây điện, ống nước, bo mạch điện tử, hợp kim đồng xu, kháng khuẩn bề mặt.">
+                    <span class="z">29</span><span class="sym">Cu</span>
+                </div>
+                <div class="element transition" data-z="30" data-symbol="Zn" data-name="Zinc" data-e="[Ar] 3d¹⁰ 4s²" data-use="Mạ kẽm chống gỉ cho tôn lợp nhà, kem chống nắng (ZnO), pin kiềm.">
+                    <span class="z">30</span><span class="sym">Zn</span>
+                </div>
+                <div class="element post-transition" data-z="31" data-symbol="Ga" data-name="Gallium" data-e="[Ar] 3d¹⁰ 4s² 4p¹" data-use="Bóng đèn LED, linh kiện bán dẫn cao tần, nhiệt kế y tế không độc.">
+                    <span class="z">31</span><span class="sym">Ga</span>
+                </div>
+                <div class="element metalloid" data-z="32" data-symbol="Ge" data-name="Germanium" data-e="[Ar] 3d¹⁰ 4s² 4p²" data-use="Cáp quang viễn thông, camera nhìn xuyên đêm (hồng ngoại), pin mặt trời.">
+                    <span class="z">32</span><span class="sym">Ge</span>
+                </div>
+                <div class="element metalloid" data-z="33" data-symbol="As" data-name="Arsenic" data-e="[Ar] 3d¹⁰ 4s² 4p³" data-use="Bán dẫn GaAs, làm cứng hợp kim chì." data-toxic="Thạch tín là chất kịch độc, tích tụ trong cơ thể gây ung thư.">
+                    <span class="z">33</span><span class="sym">As</span>
+                </div>
+                <div class="element nonmetal" data-z="34" data-symbol="Se" data-name="Selenium" data-e="[Ar] 3d¹⁰ 4s² 4p⁴" data-use="Dầu gội trị gàu, trống máy photocopy, cảm biến ánh sáng.">
+                    <span class="z">34</span><span class="sym">Se</span>
+                </div>
+                <div class="element halogen" data-z="35" data-symbol="Br" data-name="Bromine" data-e="[Ar] 3d¹⁰ 4s² 4p⁵" data-use="Chất chống cháy trong nhựa, phim ảnh phim X-quang, thuốc an thần cũ." data-toxic="Hơi lỏng màu nâu đỏ gây phỏng nặng và cực kỳ độc đường hô hấp.">
+                    <span class="z">35</span><span class="sym">Br</span>
+                </div>
+                <div class="element noble-gas" data-z="36" data-symbol="Kr" data-name="Krypton" data-e="[Ar] 3d¹⁰ 4s² 4p⁶" data-use="Đèn flash nhiếp ảnh tốc độ cao, đèn huỳnh quang dạ quang, laser phẫu thuật mắt.">
+                    <span class="z">36</span><span class="sym">Kr</span>
+                </div>
+
+                <div class="element alkali" style="grid-column: 1;" data-z="37" data-symbol="Rb" data-name="Rubidium" data-e="[Kr] 5s¹" data-use="Đồng hồ nguyên tử độ chính xác cao, ống kính tia nhìn đêm.">
+                    <span class="z">37</span><span class="sym">Rb</span>
+                </div>
+                <div class="element alkaline" data-z="38" data-symbol="Sr" data-name="Strontium" data-e="[Kr] 5s²" data-use="Tạo màu đỏ tươi rực rỡ trong pháo hoa, sơn dạ quang.">
+                    <span class="z">38</span><span class="sym">Sr</span>
+                </div>
+                <div class="element transition" data-z="39" data-symbol="Y" data-name="Yttrium" data-e="[Kr] 4d¹ 5s²" data-use="Laser cắt kim loại, đèn LED trắng, màn hình tivi màu đỏ cũ.">
+                    <span class="z">39</span><span class="sym">Y</span>
+                </div>
+                <div class="element transition" data-z="40" data-symbol="Zr" data-name="Zirconium" data-e="[Kr] 4d² 5s²" data-use="Vỏ bọc thanh nhiên liệu lò phản ứng hạt nhân, đá Cubic Zirconia (trang sức).">
+                    <span class="z">40</span><span class="sym">Zr</span>
+                </div>
+                <div class="element transition" data-z="41" data-symbol="Nb" data-name="Niobium" data-e="[Kr] 4d⁴ 5s¹" data-use="Hợp kim thép làm đường ống dẫn khí, nam châm siêu dẫn máy MRI.">
+                    <span class="z">41</span><span class="sym">Nb</span>
+                </div>
+                <div class="element transition" data-z="42" data-symbol="Mo" data-name="Molybdenum" data-e="[Kr] 4d⁵ 5s¹" data-use="Thép chống đạn, động cơ phản lực, dầu bôi trơn máy móc.">
+                    <span class="z">42</span><span class="sym">Mo</span>
+                </div>
+                <div class="element transition" data-z="43" data-symbol="Tc" data-name="Technetium" data-e="[Kr] 4d⁵ 5s²" data-use="Dùng làm chất đồng vị phóng xạ theo dõi hình ảnh trong y học." data-toxic="Có tính phóng xạ nhẹ.">
+                    <span class="z">43</span><span class="sym">Tc</span>
+                </div>
+                <div class="element transition" data-z="44" data-symbol="Ru" data-name="Ruthenium" data-e="[Kr] 4d⁷ 5s¹" data-use="Tiếp điểm điện siêu bền, hợp kim tăng cứng cho Bạch kim (Pt).">
+                    <span class="z">44</span><span class="sym">Ru</span>
+                </div>
+                <div class="element transition" data-z="45" data-symbol="Rh" data-name="Rhodium" data-e="[Kr] 4d⁸ 5s¹" data-use="Mạ trang sức chống xước trắng sáng bóng, bộ lọc khí thải ô tô.">
+                    <span class="z">45</span><span class="sym">Rh</span>
+                </div>
+                <div class="element transition" data-z="46" data-symbol="Pd" data-name="Palladium" data-e="[Kr] 4d¹⁰" data-use="Bộ xúc tác xử lý khí thải ô tô, tụ điện trong smartphone, mạ chân răng.">
+                    <span class="z">46</span><span class="sym">Pd</span>
+                </div>
+                <div class="element transition" data-z="47" data-symbol="Ag" data-name="Silver" data-e="[Kr] 4d¹⁰ 5s¹" data-use="Trang sức, mạch điện trở thấp nhất, tấm pin mặt trời, nano bạc diệt khuẩn.">
+                    <span class="z">47</span><span class="sym">Ag</span>
+                </div>
+                <div class="element transition" data-z="48" data-symbol="Cd" data-name="Cadmium" data-e="[Kr] 4d¹⁰ 5s²" data-use="Pin sạc Ni-Cd cũ, màu vẽ vàng/đỏ rực." data-toxic="Kịch độc, gây suy thận, giòn xương và tích tụ không thải được.">
+                    <span class="z">48</span><span class="sym">Cd</span>
+                </div>
+                <div class="element post-transition" data-z="49" data-symbol="In" data-name="Indium" data-e="[Kr] 4d¹⁰ 5s² 5p¹" data-use="Màng hình cảm ứng (ITO) của điện thoại, LCD.">
+                    <span class="z">49</span><span class="sym">In</span>
+                </div>
+                <div class="element post-transition" data-z="50" data-symbol="Sn" data-name="Tin" data-e="[Kr] 4d¹⁰ 5s² 5p²" data-use="Mối hàn điện tử vô hại (chì thay thế), tráng thiếc vỏ đồ hộp bảo quản thức ăn.">
+                    <span class="z">50</span><span class="sym">Sn</span>
+                </div>
+                <div class="element metalloid" data-z="51" data-symbol="Sb" data-name="Antimony" data-e="[Kr] 4d¹⁰ 5s² 5p³" data-use="Vật liệu chống cháy, ắc quy axit chì.">
+                    <span class="z">51</span><span class="sym">Sb</span>
+                </div>
+                <div class="element metalloid" data-z="52" data-symbol="Te" data-name="Tellurium" data-e="[Kr] 4d¹⁰ 5s² 5p⁴" data-use="Tấm pin mặt trời CdTe, tăng cứng thép hợp kim.">
+                    <span class="z">52</span><span class="sym">Te</span>
+                </div>
+                <div class="element halogen" data-z="53" data-symbol="I" data-name="Iodine" data-e="[Kr] 4d¹⁰ 5s² 5p⁵" data-use="Cồn Iốt sát trùng vết thương, muối iốt ngừa bướu cổ, mực in.">
+                    <span class="z">53</span><span class="sym">I</span>
+                </div>
+                <div class="element noble-gas" data-z="54" data-symbol="Xe" data-name="Xenon" data-e="[Kr] 4d¹⁰ 5s² 5p⁶" data-use="Đèn pha ô tô siêu sáng, động cơ đẩy ion cho vệ tinh vũ trụ.">
+                    <span class="z">54</span><span class="sym">Xe</span>
+                </div>
+
+                <div class="element alkali" style="grid-column: 1;" data-z="55" data-symbol="Cs" data-name="Cesium" data-e="[Xe] 6s¹" data-use="Đồng hồ nguyên tử định vị GPS chính xác nhất thế giới." data-toxic="Phản ứng nổ tung ngay lập tức khi chạm vào nước ẩm.">
+                    <span class="z">55</span><span class="sym">Cs</span>
+                </div>
+                <div class="element alkaline" data-z="56" data-symbol="Ba" data-name="Barium" data-e="[Xe] 6s²" data-use="Thuốc cản quang chụp X-quang dạ dày, pháo hoa màu xanh lá cây." data-toxic="Các muối bari tan đều độc.">
+                    <span class="z">56</span><span class="sym">Ba</span>
+                </div>
+                
+                <div class="element-placeholder" style="grid-column: 3;">
+                    <span>57-71</span><br><span>*Lanthanide</span>
+                </div>
+
+                <div class="element transition" style="grid-column: 4;" data-z="72" data-symbol="Hf" data-name="Hafnium" data-e="[Xe] 4f¹⁴ 5d² 6s²" data-use="Thanh điều khiển hấp thụ neutron trong lò hạt nhân, vi xử lý Intel siêu nhỏ.">
+                    <span class="z">72</span><span class="sym">Hf</span>
+                </div>
+                <div class="element transition" data-z="73" data-symbol="Ta" data-name="Tantalum" data-e="[Xe] 4f¹⁴ 5d³ 6s²" data-use="Tụ điện thu nhỏ trong mọi smartphone, xương ghép nhân tạo.">
+                    <span class="z">73</span><span class="sym">Ta</span>
+                </div>
+                <div class="element transition" data-z="74" data-symbol="W" data-name="Tungsten" data-e="[Xe] 4f¹⁴ 5d⁴ 6s²" data-use="Dây tóc bóng đèn sợi đốt (chịu nhiệt siêu cao), dao phay cơ khí, phi tiêu.">
+                    <span class="z">74</span><span class="sym">W</span>
+                </div>
+                <div class="element transition" data-z="75" data-symbol="Re" data-name="Rhenium" data-e="[Xe] 4f¹⁴ 5d⁵ 6s²" data-use="Động cơ phản lực nhiệt độ cao, tiếp điểm điện chịu mài mòn.">
+                    <span class="z">75</span><span class="sym">Re</span>
+                </div>
+                <div class="element transition" data-z="76" data-symbol="Os" data-name="Osmium" data-e="[Xe] 4f¹⁴ 5d⁶ 6s²" data-use="Ngòi bút máy cao cấp, chốt bản lề. Nguyên tố nặng và đặc nhất bảng tuần hoàn." data-toxic="Bột Osmium tự sinh ra khí OsO4 có mùi tỏi, phá hủy mắt và phổi.">
+                    <span class="z">76</span><span class="sym">Os</span>
+                </div>
+                <div class="element transition" data-z="77" data-symbol="Ir" data-name="Iridium" data-e="[Xe] 4f¹⁴ 5d⁷ 6s²" data-use="Bugi đánh lửa ô tô siêu bền, thiên thạch.">
+                    <span class="z">77</span><span class="sym">Ir</span>
+                </div>
+                <div class="element transition" data-z="78" data-symbol="Pt" data-name="Platinum" data-e="[Xe] 4f¹⁴ 5d⁹ 6s¹" data-use="Trang sức Bạch Kim cao cấp, xúc tác lọc khí xả xe hơi, thuốc trị ung thư (Cisplatin).">
+                    <span class="z">78</span><span class="sym">Pt</span>
+                </div>
+                <div class="element transition" data-z="79" data-symbol="Au" data-name="Gold" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s¹" data-use="Tài sản lưu trữ (Vàng), mạ chân tiếp xúc linh kiện điện tử cao cấp, nha khoa." data-toxic="Hoàn toàn trơ và an toàn sinh học.">
+                    <span class="z">79</span><span class="sym">Au</span>
+                </div>
+                <div class="element transition" data-z="80" data-symbol="Hg" data-name="Mercury" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s²" data-use="Nhiệt kế cũ, đèn huỳnh quang (đèn tuýp), hỗn hống trám răng." data-toxic="Kim loại lỏng duy nhất. Hơi thủy ngân cực độc, gây hủy hoại hệ thần kinh não bộ.">
+                    <span class="z">80</span><span class="sym">Hg</span>
+                </div>
+                <div class="element post-transition" data-z="81" data-symbol="Tl" data-name="Thallium" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹" data-use="Ống kính hồng ngoại." data-toxic="Được mệnh danh là 'chất độc hoàn hảo' vì không mùi, không vị. Kịch độc.">
+                    <span class="z">81</span><span class="sym">Tl</span>
+                </div>
+                <div class="element post-transition" data-z="82" data-symbol="Pb" data-name="Lead" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²" data-use="Bình ắc quy xe máy/ô tô, áo chắn tia X-quang." data-toxic="Nhiễm độc chì lâu dài gây suy giảm trí tuệ, đã bị cấm pha vào xăng sơn.">
+                    <span class="z">82</span><span class="sym">Pb</span>
+                </div>
+                <div class="element post-transition" data-z="83" data-symbol="Bi" data-name="Bismuth" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³" data-use="Thuốc đau dạ dày (Pepto-Bismol), kim loại nóng chảy thấp thay thế chì độc hại.">
+                    <span class="z">83</span><span class="sym">Bi</span>
+                </div>
+                <div class="element metalloid" data-z="84" data-symbol="Po" data-name="Polonium" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴" data-use="Chổi chống tĩnh điện phim ảnh." data-toxic="Phóng xạ cực mạnh và siêu độc (từng dùng làm chất độc ám sát).">
+                    <span class="z">84</span><span class="sym">Po</span>
+                </div>
+                <div class="element halogen" data-z="85" data-symbol="At" data-name="Astatine" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵" data-use="Xạ trị ung thư." data-toxic="Phóng xạ cực kỳ nguy hiểm, hiếm nhất vỏ Trái Đất.">
+                    <span class="z">85</span><span class="sym">At</span>
+                </div>
+                <div class="element noble-gas" data-z="86" data-symbol="Rn" data-name="Radon" data-e="[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶" data-use="Dự báo động đất." data-toxic="Khí phóng xạ tự nhiên rỉ từ lòng đất, nguyên nhân thứ 2 gây ung thư phổi sau hút thuốc.">
+                    <span class="z">86</span><span class="sym">Rn</span>
+                </div>
+
+                <div class="element alkali" style="grid-column: 1;" data-z="87" data-symbol="Fr" data-name="Francium" data-e="[Rn] 7s¹" data-use="Không có ứng dụng thực tiễn do cực hiếm và phân rã chớp nhoáng." data-toxic="Phóng xạ cực mạnh.">
+                    <span class="z">87</span><span class="sym">Fr</span>
+                </div>
+                <div class="element alkaline" data-z="88" data-symbol="Ra" data-name="Radium" data-e="[Rn] 7s²" data-use="Từng dùng làm sơn mặt đồng hồ phát sáng dạ quang thời xưa." data-toxic="Gây bệnh hoại tử xương hàm (Radium jaw) cho công nhân sơn đồng hồ. Phóng xạ mạnh.">
+                    <span class="z">88</span><span class="sym">Ra</span>
+                </div>
+
+                <div class="element-placeholder" style="grid-column: 3;">
+                    <span>89-103</span><br><span>**Actinide</span>
+                </div>
+
+                <div class="element transition" style="grid-column: 4;" data-z="104" data-symbol="Rf" data-name="Rutherfordium" data-e="[Rn] 5f¹⁴ 6d² 7s²" data-use="Chỉ phục vụ nghiên cứu vật lý hạt nhân." data-toxic="Nhân tạo, phóng xạ mạnh.">
+                    <span class="z">104</span><span class="sym">Rf</span>
+                </div>
+                <div class="element transition" data-z="105" data-symbol="Db" data-name="Dubnium" data-e="[Rn] 5f¹⁴ 6d³ 7s²" data-use="Chỉ phục vụ nghiên cứu vật lý hạt nhân." data-toxic="Nhân tạo, phóng xạ cực mạnh.">
+                    <span class="z">105</span><span class="sym">Db</span>
+                </div>
+                <div class="element transition" data-z="106" data-symbol="Sg" data-name="Seaborgium" data-e="[Rn] 5f¹⁴ 6d⁴ 7s²" data-use="Chỉ tồn tại chớp nhoáng trong phòng thí nghiệm." data-toxic="Nhân tạo siêu nặng.">
+                    <span class="z">106</span><span class="sym">Sg</span>
+                </div>
+                <div class="element transition" data-z="107" data-symbol="Bh" data-name="Bohrium" data-e="[Rn] 5f¹⁴ 6d⁵ 7s²" data-use="Chỉ phục vụ nghiên cứu khoa học cơ bản." data-toxic="Nhân tạo, phân rã siêu tốc.">
+                    <span class="z">107</span><span class="sym">Bh</span>
+                </div>
+                <div class="element transition" data-z="108" data-symbol="Hs" data-name="Hassium" data-e="[Rn] 5f¹⁴ 6d⁶ 7s²" data-use="Chỉ để nghiên cứu cấu trúc vật chất." data-toxic="Phóng xạ cực mạnh.">
+                    <span class="z">108</span><span class="sym">Hs</span>
+                </div>
+                <div class="element transition" data-z="109" data-symbol="Mt" data-name="Meitnerium" data-e="[Rn] 5f¹⁴ 6d⁷ 7s²" data-use="Không có ứng dụng ngoài nghiên cứu lý thuyết." data-toxic="Nhân tạo, phóng xạ nguy hiểm.">
+                    <span class="z">109</span><span class="sym">Mt</span>
+                </div>
+                <div class="element transition" data-z="110" data-symbol="Ds" data-name="Darmstadtium" data-e="[Rn] 5f¹⁴ 6d⁹ 7s¹" data-use="Chỉ nghiên cứu hạt nhân." data-toxic="Phóng xạ mạnh.">
+                    <span class="z">110</span><span class="sym">Ds</span>
+                </div>
+                <div class="element transition" data-z="111" data-symbol="Rg" data-name="Roentgenium" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s¹" data-use="Nghiên cứu nguyên tử siêu nặng." data-toxic="Rất độc và phóng xạ.">
+                    <span class="z">111</span><span class="sym">Rg</span>
+                </div>
+                <div class="element transition" data-z="112" data-symbol="Cn" data-name="Copernicium" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s²" data-use="Khảo sát giới hạn bảng tuần hoàn." data-toxic="Phân rã trong vài giây.">
+                    <span class="z">112</span><span class="sym">Cn</span>
+                </div>
+                <div class="element post-transition" data-z="113" data-symbol="Nh" data-name="Nihonium" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹" data-use="Nghiên cứu khoa học. Phát hiện bởi Nhật Bản." data-toxic="Nhân tạo, nguy hiểm.">
+                    <span class="z">113</span><span class="sym">Nh</span>
+                </div>
+                <div class="element post-transition" data-z="114" data-symbol="Fl" data-name="Flerovium" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²" data-use="Nghiên cứu hạt nhân." data-toxic="Phóng xạ nguy hiểm.">
+                    <span class="z">114</span><span class="sym">Fl</span>
+                </div>
+                <div class="element post-transition" data-z="115" data-symbol="Mc" data-name="Moscovium" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³" data-use="Nghiên cứu vật lý hạt nhân lý thuyết." data-toxic="Nhân tạo.">
+                    <span class="z">115</span><span class="sym">Mc</span>
+                </div>
+                <div class="element post-transition" data-z="116" data-symbol="Lv" data-name="Livermorium" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴" data-use="Không có ứng dụng." data-toxic="Phóng xạ cực mạnh.">
+                    <span class="z">116</span><span class="sym">Lv</span>
+                </div>
+                <div class="element halogen" data-z="117" data-symbol="Ts" data-name="Tennessine" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵" data-use="Nghiên cứu 'đảo ổn định' trong vật lý hạt nhân." data-toxic="Phân rã cực nhanh.">
+                    <span class="z">117</span><span class="sym">Ts</span>
+                </div>
+                <div class="element noble-gas" data-z="118" data-symbol="Og" data-name="Oganesson" data-e="[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶" data-use="Nguyên tố nặng nhất hiện biết, nghiên cứu cấu trúc hạt nhân." data-toxic="Phóng xạ siêu mạnh, chỉ tồn tại một phần nghìn giây.">
+                    <span class="z">118</span><span class="sym">Og</span>
+                </div>
+            </div> <div class="special-series-container">
+                
+                <div class="series-label">* Lanthanide</div>
+                <div class="element lanthanide" data-z="57" data-symbol="La" data-name="Lanthanum" data-e="[Xe] 5d¹ 6s²" data-use="Kính viễn vọng camera lai, bình điện hybrid ô tô.">
+                    <span class="z">57</span><span class="sym">La</span>
+                </div>
+                <div class="element lanthanide" data-z="58" data-symbol="Ce" data-name="Cerium" data-e="[Xe] 4f¹ 5d¹ 6s²" data-use="Đá lửa hộp quẹt, xúc tác làm sạch khí xả lò nướng tự làm sạch.">
+                    <span class="z">58</span><span class="sym">Ce</span>
+                </div>
+                <div class="element lanthanide" data-z="59" data-symbol="Pr" data-name="Praseodymium" data-e="[Xe] 4f³ 6s²" data-use="Kính hàn bảo vệ mắt, hợp kim động cơ máy bay.">
+                    <span class="z">59</span><span class="sym">Pr</span>
+                </div>
+                <div class="element lanthanide" data-z="60" data-symbol="Nd" data-name="Neodymium" data-e="[Xe] 4f⁴ 6s²" data-use="Nam châm vĩnh cửu siêu mạnh trong tai nghe, động cơ xe điện Tesla.">
+                    <span class="z">60</span><span class="sym">Nd</span>
+                </div>
+                <div class="element lanthanide" data-z="61" data-symbol="Pm" data-name="Promethium" data-e="[Xe] 4f⁵ 6s²" data-use="Pin hạt nhân siêu bền cho thiết bị thăm dò vũ trụ." data-toxic="Phóng xạ nhẹ.">
+                    <span class="z">61</span><span class="sym">Pm</span>
+                </div>
+                <div class="element lanthanide" data-z="62" data-symbol="Sm" data-name="Samarium" data-e="[Xe] 4f⁶ 6s²" data-use="Nam châm guitar điện, tia X điều trị ung thư xương.">
+                    <span class="z">62</span><span class="sym">Sm</span>
+                </div>
+                <div class="element lanthanide" data-z="63" data-symbol="Eu" data-name="Europium" data-e="[Xe] 4f⁷ 6s²" data-use="Phosphor phát quang đỏ trong màn hình TV và tem chống tiền giả (phát sáng dưới UV).">
+                    <span class="z">63</span><span class="sym">Eu</span>
+                </div>
+                <div class="element lanthanide" data-z="64" data-symbol="Gd" data-name="Gadolinium" data-e="[Xe] 4f⁷ 5d¹ 6s²" data-use="Thuốc cản từ bơm vào ven trước khi chụp MRI từ trường cao.">
+                    <span class="z">64</span><span class="sym">Gd</span>
+                </div>
+                <div class="element lanthanide" data-z="65" data-symbol="Tb" data-name="Terbium" data-e="[Xe] 4f⁹ 6s²" data-use="Thiết bị phát âm thanh dưới mặt bàn (Loa siêu nhỏ).">
+                    <span class="z">65</span><span class="sym">Tb</span>
+                </div>
+                <div class="element lanthanide" data-z="66" data-symbol="Dy" data-name="Dysprosium" data-e="[Xe] 4f¹⁰ 6s²" data-use="Ổ cứng máy tính dung lượng lớn, nam châm turbine gió.">
+                    <span class="z">66</span><span class="sym">Dy</span>
+                </div>
+                <div class="element lanthanide" data-z="67" data-symbol="Ho" data-name="Holmium" data-e="[Xe] 4f¹¹ 6s²" data-use="Tạo từ trường nhân tạo mạnh nhất, dao mổ laser tuyến tiền liệt.">
+                    <span class="z">67</span><span class="sym">Ho</span>
+                </div>
+                <div class="element lanthanide" data-z="68" data-symbol="Er" data-name="Erbium" data-e="[Xe] 4f¹² 6s²" data-use="Bộ khuếch đại quang học trong cáp quang Internet xuyên biển.">
+                    <span class="z">68</span><span class="sym">Er</span>
+                </div>
+                <div class="element lanthanide" data-z="69" data-symbol="Tm" data-name="Thulium" data-e="[Xe] 4f¹³ 6s²" data-use="Máy chụp X-quang xách tay dùng đồng vị.">
+                    <span class="z">69</span><span class="sym">Tm</span>
+                </div>
+                <div class="element lanthanide" data-z="70" data-symbol="Yb" data-name="Ytterbium" data-e="[Xe] 4f¹⁴ 6s²" data-use="Laser cắt kim loại cường độ cao, đo ứng suất động đất.">
+                    <span class="z">70</span><span class="sym">Yb</span>
+                </div>
+                <div class="element lanthanide" data-z="71" data-symbol="Lu" data-name="Lutetium" data-e="[Xe] 4f¹⁴ 5d¹ 6s²" data-use="Máy quyét PET (công nghệ y tế rà soát ung thư toàn thân).">
+                    <span class="z">71</span><span class="sym">Lu</span>
+                </div>
+
+                <div class="series-label">** Actinide</div>
+                <div class="element actinide" data-z="89" data-symbol="Ac" data-name="Actinium" data-e="[Rn] 6d¹ 7s²" data-use="Nguồn bức xạ neutron cho xạ trị khối u." data-toxic="Phóng xạ cực kỳ nguy hiểm.">
+                    <span class="z">89</span><span class="sym">Ac</span>
+                </div>
+                <div class="element actinide" data-z="90" data-symbol="Th" data-name="Thorium" data-e="[Rn] 6d² 7s²" data-use="Nhiên liệu lò phản ứng hạt nhân tương lai (sạch hơn Uranium)." data-toxic="Phóng xạ tự nhiên.">
+                    <span class="z">90</span><span class="sym">Th</span>
+                </div>
+                <div class="element actinide" data-z="91" data-symbol="Pa" data-name="Protactinium" data-e="[Rn] 5f² 6d¹ 7s²" data-use="Nghiên cứu khoa học Trái đất đại dương." data-toxic="Phóng xạ mạnh, kịch độc.">
+                    <span class="z">91</span><span class="sym">Pa</span>
+                </div>
+                <div class="element actinide" data-z="92" data-symbol="U" data-name="Uranium" data-e="[Rn] 5f³ 6d¹ 7s²" data-use="Nhiên liệu lò phản ứng điện hạt nhân, bom nguyên tử lõi." data-toxic="Phóng xạ nguy hiểm, gây ung thư, tổn thương thận nặng nề.">
+                    <span class="z">92</span><span class="sym">U</span>
+                </div>
+                <div class="element actinide" data-z="93" data-symbol="Np" data-name="Neptunium" data-e="[Rn] 5f⁴ 6d¹ 7s²" data-use="Máy dò vi hạt." data-toxic="Sản phẩm phụ của chất thải hạt nhân.">
+                    <span class="z">93</span><span class="sym">Np</span>
+                </div>
+                <div class="element actinide" data-z="94" data-symbol="Pu" data-name="Plutonium" data-e="[Rn] 5f⁶ 7s²" data-use="Lõi vũ khí hạt nhân, pin nguyên tử tàu thám hiểm sao Hỏa." data-toxic="Một trong những chất độc và phóng xạ nguy hiểm nhất tạo bởi con người.">
+                    <span class="z">94</span><span class="sym">Pu</span>
+                </div>
+                <div class="element actinide" data-z="95" data-symbol="Am" data-name="Americium" data-e="[Rn] 5f⁷ 7s²" data-use="Máy báo khói gắn trần nhà (Ion hóa không khí)." data-toxic="Lượng siêu nhỏ an toàn, nhưng nuốt/hít phải sẽ bị nhiễm xạ chết người.">
+                    <span class="z">95</span><span class="sym">Am</span>
+                </div>
+                <div class="element actinide" data-z="96" data-symbol="Cm" data-name="Curium" data-e="[Rn] 5f⁷ 6d¹ 7s²" data-use="Đồng vị năng lượng cung cấp nhiệt cho thiết bị trên mặt trăng." data-toxic="Tích tụ trong xương gây hủy hoại tủy.">
+                    <span class="z">96</span><span class="sym">Cm</span>
+                </div>
+                <div class="element actinide" data-z="97" data-symbol="Bk" data-name="Berkelium" data-e="[Rn] 5f⁹ 7s²" data-use="Chỉ để tổng hợp các nguyên tố nặng hơn." data-toxic="Tổng hợp nhân tạo, nguy hiểm.">
+                    <span class="z">97</span><span class="sym">Bk</span>
+                </div>
+                <div class="element actinide" data-z="98" data-symbol="Cf" data-name="Californium" data-e="[Rn] 5f¹⁰ 7s²" data-use="Máy dò mỏ vàng bạc và mỏ dầu dưới lòng đất, cực kỳ đắt tiền." data-toxic="Phóng xạ mạnh.">
+                    <span class="z">98</span><span class="sym">Cf</span>
+                </div>
+                <div class="element actinide" data-z="99" data-symbol="Es" data-name="Einsteinium" data-e="[Rn] 5f¹¹ 7s²" data-use="Không có ứng dụng ngoài nghiên cứu lý thuyết." data-toxic="Phóng xạ cực mạnh.">
+                    <span class="z">99</span><span class="sym">Es</span>
+                </div>
+                <div class="element actinide" data-z="100" data-symbol="Fm" data-name="Fermium" data-e="[Rn] 5f¹² 7s²" data-use="Chỉ phục vụ nghiên cứu." data-toxic="Nhân tạo.">
+                    <span class="z">100</span><span class="sym">Fm</span>
+                </div>
+                <div class="element actinide" data-z="101" data-symbol="Md" data-name="Mendelevium" data-e="[Rn] 5f¹³ 7s²" data-use="Chỉ phục vụ nghiên cứu vật lý." data-toxic="Nhân tạo siêu nặng.">
+                    <span class="z">101</span><span class="sym">Md</span>
+                </div>
+                <div class="element actinide" data-z="102" data-symbol="No" data-name="Nobelium" data-e="[Rn] 5f¹⁴ 7s²" data-use="Chỉ phục vụ nghiên cứu." data-toxic="Nhân tạo.">
+                    <span class="z">102</span><span class="sym">No</span>
+                </div>
+                <div class="element actinide" data-z="103" data-symbol="Lr" data-name="Lawrencium" data-e="[Rn] 5f¹⁴ 7s² 7p¹" data-use="Nghiên cứu hạt nhân lý thuyết." data-toxic="Phân rã rất nhanh.">
+                    <span class="z">103</span><span class="sym">Lr</span>
+                </div>
+            </div> </section>
+
+        <section class="color-legend">
+            <h4 style="text-transform: uppercase;">Bảng Phân Nhóm Nguyên Tố</h4>
+            <ul>
+                <li><span class="color-box alkali"></span> Kim loại kiềm</li>
+                <li><span class="color-box alkaline"></span> Kim loại kiềm thổ</li>
+                <li><span class="color-box transition"></span> Kim loại chuyển tiếp</li>
+                <li><span class="color-box post-transition"></span> Kim loại yếu (Hậu chuyển tiếp)</li>
+                <li><span class="color-box metalloid"></span> Á kim</li>
+                <li><span class="color-box nonmetal"></span> Phi kim</li>
+                <li><span class="color-box halogen"></span> Halogen</li>
+                <li><span class="color-box noble-gas"></span> Khí hiếm</li>
+                <li><span class="color-box lanthanide"></span> Họ Lanthanide</li>
+                <li><span class="color-box actinide"></span> Họ Actinide</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- PHẦN FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <!-- File JavaScript giả định -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.element');
+    const pName = document.getElementById('panel-name');
+    const pZ = document.querySelector('.badge-z');
+    const pSym = document.querySelector('.badge-symbol');
+    const pE = document.getElementById('panel-e-config');
+    const pUse = document.getElementById('panel-use');
+    const pTox = document.getElementById('panel-toxic');
+    const infoPanel = document.getElementById('info-panel');
+    const badge = document.querySelector('.element-badge');
+
+    // Hàm lấy màu nền hiện tại của nguyên tố để đồng bộ lên Badge Info
+    function getElementColor(el) {
+        return window.getComputedStyle(el).backgroundColor;
+    }
+
+    // 1. Chức năng Click xem thông tin nguyên tố
+    elements.forEach(el => {
+        el.addEventListener('click', () => {
+            // Xóa trạng thái active của tất cả ô khác
+            elements.forEach(e => e.classList.remove('active'));
+            el.classList.add('active');
+
+            // Cập nhật text dữ liệu
+            pZ.textContent = el.dataset.z;
+            pSym.textContent = el.dataset.symbol;
+            pName.textContent = el.dataset.name;
+            pE.textContent = el.dataset.e;
+            pUse.textContent = el.dataset.use;
+            
+            // Xử lý nếu nguyên tố an toàn/trơ chưa ghi chú độc tính
+            pTox.textContent = el.dataset.toxic ? el.dataset.toxic : "Đang cập nhật hoặc nguyên tố an toàn.";
+
+            // Đồng bộ màu của huy hiệu badge với màu của nguyên tố
+            badge.style.backgroundColor = getElementColor(el);
+
+            // Hiệu ứng Fade & Slide cho bảng thông tin
+            infoPanel.style.opacity = '0';
+            infoPanel.style.transform = 'translateY(10px)';
+            setTimeout(() => { 
+                infoPanel.style.opacity = '1'; 
+                infoPanel.style.transform = 'translateY(0)';
+            }, 150);
+        });
+    });
+
+    // 2. Chức năng Hover Chú giải (Legend) để làm nổi bật nhóm nguyên tố
+    const legendItems = document.querySelectorAll('.color-legend li');
+    legendItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            // Lấy class phân nhóm từ ô màu (Ví dụ: 'alkali', 'noble-gas')
+            const spanClass = item.querySelector('.color-box').classList[1]; 
+            
+            elements.forEach(el => {
+                if(!el.classList.contains(spanClass)) {
+                    el.style.opacity = '0.2'; // Làm mờ nguyên tố không thuộc nhóm
+                } else {
+                    el.style.opacity = '1';
+                    el.style.transform = 'scale(1.05)';
+                }
+            });
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            // Trả lại trạng thái bình thường khi không hover nữa
+            elements.forEach(el => {
+                el.style.opacity = '1';
+                if (!el.classList.contains('active')) {
+                    el.style.transform = 'scale(1)';
+                }
+            });
+        });
+    });
+
+    // 3. Kích hoạt mặc định hiển thị nguyên tố Carbon khi mới vào trang
+    const carbon = document.querySelector('.element[data-symbol="C"]');
+    if(carbon) {
+        carbon.click();
+    }
+});
+    </script>
+</body>
+</html>

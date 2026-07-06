@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thí nghiệm 2: Phản ứng nitro hóa</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      MathJax = {
+        loader: {load: ['[tex]/mhchem']},
+        tex: {
+          packages: {'[+]': ['mhchem']},
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Tối ưu UI/UX: Khoảng cách và hiệu ứng khối */
+        .image-placeholder {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .image-placeholder:hover { background-color: #f1f5f9; border-color: #94a3b8; }
+        .image-placeholder i { font-size: 2.5rem; color: #94a3b8; }
+        
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            text-align: center;
+        }
+        .custom-table th { background-color: #4e54c8; color: white; font-weight: 600; }
+        .custom-table tr:nth-child(even) { background-color: #f8fafc; }
+        
+        /* UI Hỗ trợ sư phạm (Hints & Explanations) */
+        .hint-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #5c4000;
+        }
+        .explain-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #0b3d60;
+        }
+        
+        /* Tối ưu khoảng cách trong Quiz */
+        .interactive-quiz {
+            margin-bottom: 30px; 
+            padding: 25px;
+            background: #ffffff;
+            border-left: 4px solid #8f94fb;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .check-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .check-btn:hover {
+            background: #8f94fb;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="display: flex; flex-wrap: wrap; margin: 40px auto; gap: 40px;">
+        
+        <main class="main-content" style="flex: 3; min-width: 0;">
+            
+            <h1>VIDEO 2: PHẢN ỨNG NITRO HÓA</h1>
+            <p><strong>Nội dung cốt lõi:</strong> Hóa hữu cơ - Hydrocarbon</p>
+
+            <hr>
+
+            <section class="video-section">
+                <h2 style="text-transform: uppercase;">1. Quan sát thí nghiệm</h2>
+                
+                <div class="socratic-block">
+                    <h4 style="text-transform: uppercase;">💡 Gợi ý tư duy (Socratic & 5W1H)</h4>
+                    <p><strong>What & Why:</strong> Hãy chú ý đến sự thay đổi trạng thái và màu sắc của hỗn hợp sau khi đun nóng. Lớp chất lỏng màu vàng sinh ra có đặc điểm gì và tại sao nó lại lắng xuống dưới?</p>
+                </div>
+                
+                <div class="responsive-video" style="padding-bottom: 56.25%; margin: 0 auto 30px auto;">
+                    <iframe src="https://www.youtube.com/embed/XbGIzzYkNvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi kiểm tra nhanh</h3>
+                
+                <div class="interactive-quiz" data-type="mcq" data-answer="D" 
+                     data-hint="Đây là phản ứng thế nguyên tử hydrogen trong vòng benzene bằng nhóm nitro (-NO2)." 
+                     data-explain="Trong điều kiện có $\ce{H2SO4}$ đặc đun nóng, $\ce{HNO3}$ sẽ tham gia phản ứng thế electrophile vào vòng benzene. 1 nguyên tử H được thay thế bằng nhóm $\ce{-NO2}$ tạo thành Nitrobenzene có công thức $\ce{C6H5NO2}$.">
+                    <p><strong>Câu 1:</strong> Cho sơ đồ: $\ce{C6H6 + HNO3 -> X + H2O}$ (xúc tác $\ce{H2SO4}$ đặc, $t^\circ$). Biết X là chất hữu cơ. X có công thức là:</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="A"> A. $\ce{C6H4(NO2)2}$</label>
+                        <label><input type="radio" name="q1" value="B"> B. $\ce{C6H3(NO2)3}$</label>
+                        <label><input type="radio" name="q1" value="C"> C. $\ce{C6H5(NO2)2}$</label>
+                        <label><input type="radio" name="q1" value="D"> D. $\ce{C6H5NO2}$</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="B"
+                     data-hint="Hãy nhớ lại màu sắc đặc trưng của Nitrobenzene khi quan sát thí nghiệm."
+                     data-explain="Khi đun nóng hỗn hợp, phản ứng xảy ra tạo thành nitrobenzene. Chất này là một chất lỏng dạng dầu, có màu vàng nhạt và nặng hơn nước (khối lượng riêng lớn hơn) nên chìm xuống dưới. Không có hiện tượng sủi bọt khí hay kết tủa rắn.">
+                    <p><strong>Câu 2:</strong> Hiện tượng quan sát được khi cho benzene phản ứng với dung dịch $\ce{HNO3}$ (đặc) / $\ce{H2SO4}$ (đặc) có đun nóng là:</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="A"> A. sủi bọt khí.</label>
+                        <label><input type="radio" name="q2" value="B"> B. có tạo chất lỏng màu vàng.</label>
+                        <label><input type="radio" name="q2" value="C"> C. xuất hiện kết tủa vàng.</label>
+                        <label><input type="radio" name="q2" value="D"> D. không thấy hiện tượng gì.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="analysis-section">
+                <h2 style="text-transform: uppercase;">2. Phân tích và Tính toán</h2>
+
+                <div class="feynman-block" style="margin-bottom: 40px;">
+                    <h4 style="text-transform: uppercase;">👨‍🏫 Tập làm Thầy giáo (Feynman Technique)</h4>
+                    <p>Hãy lập sơ đồ về các giai đoạn tiến hành phản ứng (từ làm lạnh đến đun nóng rồi chiết). Bạn giải thích thế nào về vai trò của $\ce{H2SO4}$ đặc và ống sinh hàn hồi lưu trong hệ thống này cho một người mới bắt đầu học Hóa?</p>
+                    <textarea placeholder="Ví dụ: H2SO4 đặc ở đây không chỉ là xúc tác mà còn giúp lấy đi nước sinh ra... Còn ống sinh hàn thì..."></textarea>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm nhiều lựa chọn</h3>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="D"
+                     data-hint="Chú ý từ khóa 'cộng' và 'thế'. Phản ứng của vòng benzene với hỗn hợp acid là loại phản ứng nào?"
+                     data-explain="Phản ứng nitro hóa là phản ứng <strong>thế</strong> electrophile ở vòng thơm, không phải phản ứng <strong>cộng</strong>. Các phát biểu A, B, C đều đúng (Toluene có nhóm $\ce{-CH3}$ đẩy electron nên phản ứng thế dễ hơn benzene, tạo nitrotoluene chứ không phải nitrobenzene).">
+                    <p><strong>Câu 3:</strong> Nitrobenzene được ứng dụng trong nông nghiệp để tổng hợp chất kích thích tăng trưởng thực vật. Phản ứng nitro hoá benzene được thực hiện như sau:</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="ChatGPT Image 10_17_31 6 thg 7, 2026.png" alt="Sơ đồ thí nghiệm nitro hóa benzene" style="max-width: 35%; height: auto; border-radius: 8px;"> 
+                    </div>
+
+                    <p>Cho con từ vào bình cầu dung tích 250 mL, thêm khoảng 30 ml $\ce{H2SO4}$ đặc, làm lạnh trong chậu nước đá rồi thêm từ từ khoảng 30 mL $\ce{HNO3}$, sau đó thêm tiếp khoảng 10 mL benzene và lắp sinh hàn hồi lưu. Đun cách thuỷ hỗn hợp phản ứng trên bếp từ đến $80^\circ\text{C}$ trong khoảng 60 phút. Để nguội rồi cho hỗn hợp vào phễu chiết để tách sản phẩm phản ứng. <strong>Nhận định nào sau đây không đúng</strong> về thí nghiệm trên:</p>
+                    
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="A"> A. Sinh hàn hồi lưu có tác dụng ngưng tụ các chất lỏng bay hơi cho trở lại bình phản ứng.</label>
+                        <label><input type="radio" name="q3" value="B"> B. Chất lỏng trong phễu chiết tách thành 2 lớp, lớp trên là sản phẩm phản ứng, lớp dưới là dung dịch hỗn hợp 2 acid.</label>
+                        <label><input type="radio" name="q3" value="C"> C. Nếu thay benzene bằng toluene thì phản ứng xảy ra dễ hơn, nhưng không thu được nitrobenzene.</label>
+                        <label><input type="radio" name="q3" value="D"> D. Phản ứng xảy ra trong thí nghiệm là phản ứng cộng nhóm nitro vào vòng benzene.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm trả lời ngắn</h3>
+
+                <div class="interactive-quiz" data-type="short" data-answer="4"
+                     data-hint="Đọc kỹ ý số 5. Toluene có nhóm -CH3 đẩy electron, điều này làm vòng benzene giàu điện tử hơn hay nghèo đi?"
+                     data-explain="Có 4 nhận định đúng là (1), (2), (3), (4).<br>Nhận định (5) sai vì nhóm methyl ($\ce{-CH3}$) trong toluene là nhóm đẩy electron, làm tăng mật độ electron trong vòng thơm nên phản ứng thế nitro hóa sẽ diễn ra <strong>dễ dàng hơn</strong> so với benzene.">
+                    <p><strong>Câu 4:</strong> Tiến hành thí nghiệm nitro hóa benzene: Cho vào ống nghiệm 1 mL $\ce{HNO3}$ đặc và 2 mL $\ce{H2SO4}$ đặc, lắc đều và làm lạnh. Sau đó, thêm tiếp 1 mL benzene, lắc mạnh và ngâm ống nghiệm trong cốc nước ấm $50-60^\circ\text{C}$ khoảng 5 - 10 phút. Cho các nhận định sau về thí nghiệm:<br>
+                    1. Phản ứng trên thuộc loại phản ứng thế ở vòng thơm.<br>
+                    2. Vai trò $\ce{H2SO4}$ đặc của trong thí nghiệm là chất xúc tác và chất hút nước.<br>
+                    3. Sau khi kết thúc thí nghiệm và để nguội, chất lỏng trong ống nghiệm sẽ tách thành 2 lớp.<br>
+                    4. Lớp chất lỏng màu vàng, nặng hơn nước lắng xuống dưới là nitrobenzene.<br>
+                    5. Nếu thay benzene bằng toluene thì phản ứng sẽ diễn ra khó khăn hơn.<br>
+                    Số nhận định đúng là:</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập số lượng nhận định đúng...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="123"
+                     data-hint="X là Nitrobenzene (C6H5NO2). C = 12, H = 1, N = 14, O = 16."
+                     data-explain="Sản phẩm X là nitrobenzene, công thức phân tử là $\ce{C6H5NO2}$.<br>Phân tử khối $M = 12 \times 6 + 1 \times 5 + 14 + 16 \times 2 = 123$ (amu).">
+                    <p><strong>Câu 5:</strong> Khi cho benzene tác dụng với hỗn hợp $\ce{HNO3}$ đặc và $\ce{H2SO4}$ đặc ở nhiệt độ khoảng $50-60^\circ\text{C}$ theo tỉ lệ mol 1:1, nguyên tử hydrogen trong vòng benzene bị thế bởi nhóm nitro tạo thành sản phẩm hữu cơ X. Khối lượng phân tử (tính theo đơn vị amu) của sản phẩm X là bao nhiêu?</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập khối lượng phân tử...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="80"
+                     data-hint="Tính số mol benzene. Tính khối lượng nitrobenzene theo lý thuyết, rồi so sánh với thực tế (19,68g)."
+                     data-explain="<ul><li>Số mol benzene: $n = \frac{15,6}{78} = 0,2$ (mol)</li><li>Khối lượng nitrobenzene thu được theo lý thuyết ($H = 100\%$): $m_{\text{LT}} = 0,2 \times 123 = 24,6$ (gam)</li><li>Khối lượng thu được thực tế: $m_{\text{TT}} = 19,68$ (gam)</li><li>Hiệu suất phản ứng: $H = \frac{19,68}{24,6} \times 100\% = 80\%$.</li></ul>">
+                    <p><strong>Câu 6:</strong> Để điều chế nitrobenzene, người ta cho 15,6 gam benzene phản ứng hoàn toàn với một lượng dư hỗn hợp $\ce{HNO3}$ đặc và $\ce{H2SO4}$ đặc ở nhiệt độ thích hợp. Sau khi kết thúc phản ứng, người ta thu được 19,68 g nitrobenzene nguyên chất. Hiệu suất của quá trình điều chế trên là $a\%$. Tính giá trị của $a$?</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập con số (VD: 75,5)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm Đúng/Sai</h3>
+                
+                <div class="interactive-quiz" data-type="tf" data-answer="Đ,Đ,Đ,S"
+                     data-hint="Lưu ý ý d: NaNO3 là chất tan trong nước. Khi dùng dung dịch, nó có cung cấp được NO2+ mạnh như HNO3 khan trong H2SO4 đặc không?"
+                     data-explain="<ul><li><strong>a) Đúng:</strong> Nitrobenzene là chất lỏng màu vàng nhạt, nặng hơn nước.</li><li><strong>b) Đúng:</strong> Sulfuric acid đóng vai trò là chất xúc tác và chất hút nước.</li><li><strong>c) Đúng:</strong> Đây là phản ứng thế electrophile vào vòng thơm.</li><li><strong>d) Sai:</strong> Thay $\ce{HNO3}$ đặc bằng dung dịch $\ce{NaNO3}$ sẽ đưa thêm một lượng nước vào hệ. $\ce{H2SO4}$ đặc bị loãng ra, làm giảm hoặc mất hoàn toàn khả năng tạo tác nhân electrophile ($\ce{NO2+}$), phản ứng gần như không xảy ra hoặc hiệu suất rất thấp.</li></ul>">
+                    <p><strong>Câu 7:</strong> Cho 30 ml dung dịch $\ce{HNO3}$ đặc và 25 mL dung dịch $\ce{H2SO4}$ đặc vào bình cầu ba cổ có lắp ống sinh hàn, phễu nhỏ giọt và nhiệt kế rồi làm lạnh hỗn hợp đến $30^\circ\text{C}$. Cho từng giọt benzene vào hỗn hợp phản ứng, đồng thời lắc đều và giữ nhiệt độ ở $60^\circ\text{C}$ trong 1 giờ. Để nguội bình, sau đó rót hỗn hợp phản ứng vào phễu chiết, hỗn hợp tách thành hai lớp. Tách bỏ phần acid ở bên dưới. Rửa phần chất lỏng còn lại bằng dung dịch sodium carbonate, sau đó rửa bằng nước, thu được chất lỏng nặng hơn nước, có màu vàng nhạt.</p>
+                    
+                    <p style="font-weight: 600; color: #1e3c72; margin-top: 25px;">Hãy chọn Đúng/Sai cho các phát biểu dưới đây:</p>
+                    
+                    <div class="quiz-options">
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>a) Chất lỏng màu vàng nhạt là nitrobenzene.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_a" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_a" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>b) Sulfuric acid có vai trò chất xúc tác.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_b" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_b" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>c) Đã xảy ra phản ứng thế vào vòng benzene.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_c" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_c" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 10px;">
+                            <p>d) Một học sinh thay $\ce{HNO3}$ bằng dung dịch $\ce{NaNO3}$ nhưng vẫn giữ nguyên các điều kiện khác. Thí nghiệm vẫn tạo nitrobenzene với hiệu suất không đổi.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_d" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_d" value="S"> Sai</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTF(this)">Chấm điểm</button>
+                    <div class="feedback"></div>
+                </div>
+
+            </section>
+        </main>
+
+        <aside class="sidebar" style="flex: 1; min-width: 250px;">
+            <h3 style="text-transform: uppercase;">Danh mục Thí nghiệm</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><a href="experiment1.html">1. Phản ứng Ester hóa</a></li>
+                <li><strong>👉 2. Phản ứng Nitro hóa</strong></li>
+                <li><a href="experiment3.html">3. Chuẩn độ Fe2+ bằng KMnO4</a></li>
+                <li><a href="experiment4.html">4. Phản ứng Tráng bạc</a></li>
+                <li><a href="experiment5.html">5. Điện phân dung dịch NaCl</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleFeedback(container, isCorrect, correctAnswer = "") {
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            const feedback = container.querySelector('.feedback');
+            
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🎉 <strong>Tuyệt vời! Kết quả chính xác.</strong><br><div class="explain-box">📖 <strong>Giải thích:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `🤔 <strong>Chưa đúng rồi!</strong> Bạn hãy xem qua gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    let answerText = correctAnswer ? ` Đáp án đúng là <strong>${correctAnswer}</strong>.` : "";
+                    feedback.innerHTML = `🥲 <strong>Vẫn chưa đúng.</strong>${answerText}<br><div class="explain-box">📖 <strong>Cùng xem giải thích nhé:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+
+        function checkMCQ(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer');
+            const selected = container.querySelector('input[type="radio"]:checked');
+            const feedback = container.querySelector('.feedback');
+
+            if (!selected) {
+                feedback.innerHTML = "⚠️ Vui lòng chọn một đáp án trước khi kiểm tra!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            handleFeedback(container, selected.value === correctAnswer, correctAnswer);
+        }
+
+        function checkShort(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer').toLowerCase().trim();
+            const input = container.querySelector('.short-answer-input').value.toLowerCase().trim();
+            const feedback = container.querySelector('.feedback');
+
+            if (input === "") {
+                feedback.innerHTML = "⚠️ Vui lòng nhập câu trả lời!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (input === correctAnswer || input.replace(',', '.') === correctAnswer.replace(',', '.'));
+            handleFeedback(container, isCorrect, correctAnswer);
+        }
+
+        function checkTF(btn) {
+            const container = btn.parentElement;
+            const correctAnswers = container.getAttribute('data-answer').split(',');
+            const radioGroups = [...new Set(Array.from(container.querySelectorAll('input[type="radio"]')).map(el => el.name))];
+            const feedback = container.querySelector('.feedback');
+            
+            let score = 0;
+            let allAnswered = true;
+
+            radioGroups.forEach((groupName, index) => {
+                const selected = container.querySelector(`input[name="${groupName}"]:checked`);
+                if (!selected) allAnswered = false;
+                else if (selected.value === correctAnswers[index]) score++;
+            });
+
+            if (!allAnswered) {
+                feedback.innerHTML = "⚠️ Vui lòng hoàn thành toàn bộ các ý (a, b, c, d) trước khi chấm điểm!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (score === correctAnswers.length);
+            
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🏆 <strong>Xuất sắc! Bạn trả lời đúng toàn bộ ${score}/${correctAnswers.length} ý.</strong><br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `⚠️ <strong>Bạn mới đúng ${score}/${correctAnswers.length} ý.</strong> Cùng kiểm tra lại bằng gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    feedback.innerHTML = `🥲 <strong>Bạn trả lời đúng ${score}/${correctAnswers.length} ý.</strong> Đáp án chuẩn là: <strong>${correctAnswers.join(' - ')}</strong>.<br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

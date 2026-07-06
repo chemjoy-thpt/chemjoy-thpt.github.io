@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thí nghiệm 1: Phản ứng ester hóa</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      MathJax = {
+        loader: {load: ['[tex]/mhchem']},
+        tex: {
+          packages: {'[+]': ['mhchem']},
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Tối ưu UI/UX: Khoảng cách và hiệu ứng khối */
+        .image-placeholder {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .image-placeholder:hover { background-color: #f1f5f9; border-color: #94a3b8; }
+        .image-placeholder i { font-size: 2.5rem; color: #94a3b8; }
+        
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            text-align: center;
+        }
+        .custom-table th { background-color: #4e54c8; color: white; font-weight: 600; }
+        .custom-table tr:nth-child(even) { background-color: #f8fafc; }
+        
+        /* UI Hỗ trợ sư phạm (Hints & Explanations) */
+        .hint-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #5c4000;
+        }
+        .explain-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.95rem;
+            color: #0b3d60;
+        }
+        
+        /* Tối ưu khoảng cách trong Quiz */
+        .interactive-quiz {
+            margin-bottom: 30px; /* Tăng khoảng cách giữa các khối câu hỏi */
+            padding: 25px;
+        }
+        .check-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+        
+        /* Ẩn thẻ cite hệ thống */
+        .sys-cite { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="display: flex; flex-wrap: wrap; margin: 40px auto; gap: 40px;">
+        
+        <main class="main-content" style="flex: 3; min-width: 0;">
+            
+            <h1>VIDEO 1: PHẢN ỨNG ESTER HÓA</h1>
+            <p><strong>Nội dung cốt lõi:</strong> Hóa hữu cơ - Ester</p>
+
+            <hr>
+
+            <section class="video-section">
+                <h2 style="text-transform: uppercase;">1. Quan sát thí nghiệm</h2>
+                
+                <div class="socratic-block">
+                    <h4 style="text-transform: uppercase;">💡 Gợi ý tư duy (Socratic & 5W1H)</h4>
+                    <p><strong>What & Why:</strong> Hãy xem kỹ video dưới đây. Chú ý đến nhiệt độ đun, các hóa chất được sử dụng và hiện tượng xảy ra ở bước cuối cùng. Theo bạn, tại sao dung dịch lại tách lớp thay vì hòa tan vào nhau?</p>
+                </div>
+                
+                <div class="video-container" style="max-width: 100%; margin: 0 auto; text-align: center;">
+    <video controls style="max-width: 100%; height: auto;">
+        <source src="tiktok_video.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video này.
+    </video>
+    
+    <div class="video-source" style="margin-top: 15px; font-size: 15px; color: #ffffff;">
+        <strong>Nguồn:</strong> Kênh TikTok thầy Nguyễn Thành Trung <br>
+        <strong>Link gốc:</strong> <a href="https://vt.tiktok.com/ZSQojPGnx/" target="_blank" rel="noopener noreferrer">https://vt.tiktok.com/ZSQojPGnx/</a>
+    </div>
+</div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm nhiều lựa chọn</h3>
+                
+                <div class="interactive-quiz" data-type="mcq" data-answer="B" 
+                     data-hint="Hãy nhớ lại định nghĩa về phản ứng tạo thành ester từ alcohol và carboxylic acid." 
+                     data-explain="Phản ứng giữa ethyl alcohol ($\ce{C2H5OH}$) và acetic acid ($\ce{CH3COOH}$) có xúc tác $\ce{H2SO4}$ đặc, đun nóng là phản ứng điều chế ester (ethyl acetate). Do đó gọi là phản ứng ester hóa.">
+                    <p><strong>Câu 1:</strong> Đun sôi hỗn hợp gồm ethyl alcohol và acetic acid (có acid $\ce{H2SO4}$ đặc làm xúc tác) sẽ xảy ra phản ứng:</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="A"> A. trùng ngưng.</label>
+                        <label><input type="radio" name="q1" value="B"> B. ester hóa.</label>
+                        <label><input type="radio" name="q1" value="C"> C. xà phòng hóa.</label>
+                        <label><input type="radio" name="q1" value="D"> D. trùng hợp.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="B"
+                     data-hint="Dung dịch NaCl bão hòa có khối lượng riêng lớn, nó sẽ tác động thế nào đến lớp ester nhẹ hơn và ít tan?"
+                     data-explain="Sau bước 3, thêm dung dịch NaCl bão hòa vào làm tăng khối lượng riêng của phần dung dịch nước, đồng thời làm giảm độ hòa tan của ester. Do ester (ethyl acetate) nhẹ hơn nước và ít tan nên chất lỏng sẽ tách thành hai lớp phân lớp rõ ràng (ester nổi lên trên).">
+                    <p><strong>Câu 2:</strong> Tiến hành thí nghiệm điều chế ethyl acetate theo các bước sau đây:<br>
+                    Bước 1: Cho 1 ml $\ce{C2H5OH}$, 1 ml $\ce{CH3COOH}$ và vài giọt dung dịch $\ce{H2SO4}$ đặc vào ống nghiệm.<br>
+                    Bước 2: Lắc đều ống nghiệm, đun cách thủy (trong nồi nước nóng) khoảng 5 - 6 phút ở $65 - 70^\circ\text{C}$.<br>
+                    Bước 3: Làm lạnh, sau đó rót 2 ml dung dịch $\ce{NaCl}$ bão hòa vào ống nghiệm.<br>
+                    Phát biểu nào sau đây đúng?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="A"> A. $\ce{H2SO4}$ đặc chỉ có vai trò hút nước làm tăng hiệu suất tạo sản phẩm.</label>
+                        <label><input type="radio" name="q2" value="B"> B. Sau bước 3, chất lỏng trong ống nghiệm tách thành hai lớp.</label>
+                        <label><input type="radio" name="q2" value="C"> C. Mục đích chính của việc thêm dung dịch $\ce{NaCl}$ bão hòa là để tránh phân hủy sản phẩm.</label>
+                        <label><input type="radio" name="q2" value="D"> D. Sau bước 2, trong ống nghiệm không còn $\ce{C2H5OH}$ và $\ce{CH3COOH}$.</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="mcq" data-answer="A"
+                     data-hint="Theo nguyên tắc thí nghiệm, khi muốn khảo sát ảnh hưởng của MỘT yếu tố (Nhiệt độ), bạn phải làm gì với các yếu tố còn lại?"
+                     data-explain="Để khảo sát ảnh hưởng của nhiệt độ (biến số độc lập) đến khối lượng ester (biến số phụ thuộc), nhóm học sinh bắt buộc phải cố định (thiết lập giống nhau) tất cả các điều kiện khác, bao gồm: Thời gian phản ứng (1) và Nồng độ/thể tích chất ban đầu (2).">
+                    <p><strong>Câu 3:</strong> <i>(Trích đề thi môn Hóa học, kỳ thi Tốt nghiệp THPT năm 2025)</i><br> Khi nghiên cứu về phản ứng điều chế ethyl acetate từ cồn $96^\circ$ và acetic acid với sự có mặt của dung dịch $\ce{H2SO4}$ đặc, một nhóm học sinh muốn khảo sát ảnh hưởng của nhiệt độ đến khối lượng ester thu được sau cùng một thời gian phản ứng. Nhóm học sinh dự định thực hiện ba thí nghiệm lần lượt ở ba nhiệt độ $50^\circ\text{C}$, $60^\circ\text{C}$ và $70^\circ\text{C}$. Khi xây dựng kế hoạch thí nghiệm, nhóm thảo luận về một số yếu tố sau: <br>
+                    (1) Thời gian tiến hành phản ứng. <br>
+                    (2) Nồng độ, thể tích ban đầu của các chất phản ứng và dung dịch $\ce{H2SO4}$ đặc. <br>
+                    (3) Màu sắc của hỗn hợp trong quá trình phản ứng. <br>
+                    (4) Nhiệt độ tiến hành phản ứng. <br>
+                    Những yếu tố nào trong số các yếu tố ở trên cần được thiết lập giống nhau ở cả ba thí nghiệm?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="A"> A. (1), (2).</label>
+                        <label><input type="radio" name="q3" value="B"> B. (2), (3).</label>
+                        <label><input type="radio" name="q3" value="C"> C. (1), (4).</label>
+                        <label><input type="radio" name="q3" value="D"> D. (3), (4).</label>
+                    </div>
+                    <button class="check-btn" onclick="checkMCQ(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="analysis-section">
+                <h2 style="text-transform: uppercase;">2. Phân tích và Tính toán</h2>
+
+                <div class="feynman-block" style="margin-bottom: 40px;">
+                    <h4 style="text-transform: uppercase;">👨‍🏫 Tập làm Thầy giáo (Feynman Technique)</h4>
+                    <p>Sau khi xem xong, bạn hãy thử tưởng tượng mình đang giải thích lại vai trò của $\ce{H2SO4}$ đặc và dung dịch $\ce{NaCl}$ bão hòa cho một em học sinh lớp 9. Hãy viết cách giải thích của bạn bằng ngôn ngữ đơn giản nhất vào đây:</p>
+                    <textarea placeholder="Ví dụ: H2SO4 giống như một chiếc nam châm hút nước, giúp phản ứng không bị chạy ngược lại..."></textarea>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm trả lời ngắn</h3>
+
+                <div class="interactive-quiz" data-type="short" data-answer="3"
+                     data-hint="Hãy chú ý kỹ nguyên tắc an toàn khi tắt đèn cồn và vai trò thực sự của đá bọt."
+                     data-explain="Có 3 phát biểu đúng là (a), (b), (c).<br>- Phát biểu (d) <strong>Sai</strong> vì phải tháo ống dẫn trước khi tắt đèn cồn để tránh áp suất giảm làm nước lạnh trào ngược vào ống nghiệm đang nóng gây vỡ.<br>- Phát biểu (e) <strong>Sai</strong> vì đá bọt giúp dung dịch sôi đều, tránh sôi cục bộ gây trào dung dịch, chứ không phải bảo vệ ống nghiệm khỏi vỡ.">
+                    <p><strong>Câu 4:</strong> Điều chế ester $\ce{CH3COOC2H5}$ trong phòng thí nghiệm được mô tả theo hình vẽ sau:</p>
+                    
+                    <div class="image-placeholder">
+                    <img src="ChatGPT Image 09_47_08 6 thg 7, 2026.png" style="max-width: 100%; height: auto; border-radius: 8px;" alt="Sơ đồ thí nghiệm điều chế ester">    
+                    </div>
+
+                    <p>Cho các phát biểu sau: <br>
+                    (a) Ethyl acetate có nhiệt độ sôi thấp ($77^\circ\text{C}$) nên dễ bị bay hơi khi đun nóng. <br>
+                    (b) $\ce{H2SO4}$ đặc vừa làm chất xúc tác, vừa có tác dụng hút nước. <br>
+                    (c) Ethyl acetate qua ống dẫn dưới dạng hơi nên cần làm lạnh bằng nước đá để ngưng tụ. <br>
+                    (d) Khi kết thúc thí nghiệm, cần tắt đèn cồn trước khi tháo ống dẫn hơi Ethyl acetate. <br>
+                    (e) Vai trò của đá bọt là để bảo vệ ống nghiệm không bị vỡ. <br>
+                    Số phát biểu đúng là:</p>
+                    
+                    <input type="text" class="short-answer-input" placeholder="Nhập số lượng phát biểu đúng...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="62,5"
+                     data-hint="Tính số mol ban đầu của Acid và Ethanol. So sánh xem chất nào thiếu để tính hiệu suất theo chất đó."
+                     data-explain="<ul><li>$n_{\ce{CH3COOH}} = 12/60 = 0,2$ mol</li><li>$n_{\ce{C2H5OH}} = 13,8/46 = 0,3$ mol</li><li>Ta thấy $0,2 < 0,3 \Rightarrow$ Tính hiệu suất theo Acid.</li><li>Lý thuyết: $m_{\text{ester}} = 0,2 \times 88 = 17,6$ gam.</li><li>Thực tế thu được $11$ gam.</li><li>Hiệu suất $H = (11 / 17,6) \times 100\% = 62,5\%$.</li></ul>">
+                    <p><strong>Câu 5:</strong> Đun 12 gam acetic acid với 13,8 gam ethanol (có $\ce{H2SO4}$ đặc làm xúc tác) đến khi phản ứng đạt tới trạng thái cân bằng, thu được 11 gam ester. Hiệu suất của phản ứng ester hoá là: $a\%$. Tính giá trị của $a$.</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập con số (VD: 50,5)...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="interactive-quiz" data-type="short" data-answer="1,6"
+                     data-hint="Sử dụng hằng số cân bằng $K_c$. Ở dữ kiện 1, tính $K_c$. Ở dữ kiện 2, lập phương trình $K_c$ theo ẩn số mol Ethanol."
+                     data-explain="Phản ứng: $\ce{CH3COOH + C2H5OH <=> CH3COOC2H5 + H2O}$<br>- Từ dữ kiện 1 (1 mol acid + 1 mol alcohol ra 2/3 mol ester), ta tính được hằng số $K_c = \frac{(2/3 \times 2/3)}{(1/3 \times 1/3)} = 4$.<br>- Ở dữ kiện 2: Cần $H = 80\%$ (tính theo acid) $\Rightarrow n_{\text{acid phản ứng}} = 0,8$ mol. Gọi $x$ là số mol alcohol cần dùng. Tại cân bằng: Acid dư 0,2 mol; Alcohol dư $(x - 0,8)$ mol; Ester sinh ra 0,8 mol; Nước 0,8 mol.<br>- Áp dụng $K_c$: $4 = \frac{0,8 \times 0,8}{0,2 \times (x - 0,8)} \Rightarrow x = 1,6$ mol.">
+                    <p><strong>Câu 6:</strong> Khi thực hiện phản ứng ester hoá 1 mol $\ce{CH3COOH}$ và 1 mol $\ce{C2H5OH}$, lượng ester lớn nhất thu được là $\frac{2}{3}$ mol. Để đạt hiệu suất cực đại là $80\%$ (tính theo acid) khi tiến hành ester hoá 1 mol $\ce{CH3COOH}$ cần số mol $\ce{C2H5OH}$ là (biết các phản ứng ester hoá thực hiện ở cùng nhiệt độ).</p>
+                    <input type="text" class="short-answer-input" placeholder="Nhập số mol...">
+                    <br>
+                    <button class="check-btn" onclick="checkShort(this)">Kiểm tra đáp án</button>
+                    <div class="feedback"></div>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #1e3c72; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Câu hỏi trắc nghiệm Đúng/Sai</h3>
+                
+                <div class="interactive-quiz" data-type="tf" data-answer="S,Đ,Đ,Đ"
+                     data-hint="Phân tích phổ IR: Peak rộng ở vùng >3000 cm⁻¹ là của nhóm O-H. Chú ý sự khác biệt đỉnh hấp thụ O-H của acid và alcohol."
+                     data-explain="<ul><li><strong>a) Sai:</strong> Phản ứng giữa alcohol và acid tạo ester gọi là phản ứng ester hóa, không phải thủy phân.</li><li><strong>b) Đúng:</strong> Dựa vào bảng số sóng, Hình 1 có peak O-H rộng trải dài $3300-2500 \text{ cm}^{-1}$ kèm peak C=O quanh $1700 \text{ cm}^{-1}$, đặc trưng cho $\ce{CH3COOH}$. Hình 2 có peak O-H hẹp hơn ở vùng $3650-3200 \text{ cm}^{-1}$, đặc trưng cho $\ce{C2H5OH}$.</li><li><strong>c) Đúng:</strong> $\ce{H2SO4}$ đặc giúp xúc tác phản ứng nhanh hơn và hút nước làm cân bằng dịch chuyển sang chiều tạo ester (tăng hiệu suất).</li><li><strong>d) Đúng:</strong> Áp dụng công thức hằng số cân bằng $K_c = 4$. Lập bảng ICE với số mol ban đầu 1:1, giải ra lượng phản ứng là $2/3$ mol. Tỉ lệ $(2/3) / 1 \times 100\% = 66,67\%$.</li></ul>">
+                    <p><strong>Câu 7:</strong> Điều chế ethyl acetate trong phòng thí nghiệm được tiến hành như sau: <br>
+                    - Cho khoảng 2 ml ethanol và 2 ml acetic acid tuyệt đối vào ống nghiệm, lắc đều hỗn hợp. <br>
+                    - Thêm khoảng 1 ml dung dịch $\ce{H2SO4}$ đặc, lắc nhẹ để các chất trộn đều với nhau. <br>
+                    - Kẹp ống nghiệm vào kẹp gỗ rồi đặt ống nghiệm vào cốc nước nóng (khoảng $60^\circ\text{C} - 70^\circ\text{C}$) trong khoảng 5 phút, thỉnh thoảng lắc đều hỗn hợp. Sau đó lấy ống nghiệm ra khỏi cốc nước nóng, để nguội hỗn hợp rồi rót sang ống nghiệm khác chứa 5 ml dung dịch muối ăn bão hòa thì thấy chất lỏng trong ống nghiệm tách thành hai lớp, lớp trên có mùi thơm đặc trưng.</p>
+                    
+                    <p>Phản ứng xảy ra trong thí nghiệm theo phương trình hoá học sau: <br>
+                    $\ce{CH3COOH + C2H5OH <=>[H2SO4 \text{ đặc}, t^\circ] CH3COOC2H5 + H2O} \quad K_c = 4$</p>
+
+                    <p>Ghi phổ hồng ngoại của hai chất tham gia phản ứng trong 2 hình không tương ứng dưới đây:</p>
+                    
+                    <div style="display: flex; gap: 20px; margin: 20px 0;">
+                        <div class="image-placeholder"><img src="ChatGPT Image 09_53_20 6 thg 7, 2026.png" alt="Hình 1: Phổ IR" style="max-width: 100%; height: auto; border-radius: 8px;"></div>
+                    </div>
+
+                    <p>Cho biết số sóng hấp thụ đặc trưng của một số liên kết trên phổ hồng ngoại như sau:</p>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Liên kết</th>
+                                <th>O-H <br> (alcohol)</th>
+                                <th>O-H <br> (carboxylic acid)</th>
+                                <th>C=O <br> (ester, carboxylic acid)</th>
+                                <th>C-O <br> (ester)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Số sóng (cm⁻¹)</strong></td>
+                                <td>3650 - 3200</td>
+                                <td>3300 - 2500</td>
+                                <td>1780 - 1650</td>
+                                <td>1300 - 1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-weight: 600; color: #1e3c72; margin-top: 25px;">Hãy chọn Đúng/Sai cho các phát biểu dưới đây:</p>
+                    
+                    <div class="quiz-options">
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>a) Phản ứng hóa học xảy ra trong thí nghiệm trên là phản ứng thủy phân ester.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_a" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_a" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>b) Phổ IR trong hình 1 là phổ IR của $\ce{CH3COOH}$, hình 2 là phổ IR của $\ce{C2H5OH}$.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_b" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_b" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0;">
+                            <p>c) Sulfuric acid đặc có vai trò vừa là chất xúc tác, vừa có tác dụng hút nước, do đó góp phần làm tăng hiệu suất tạo ester.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_c" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_c" value="S"> Sai</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 10px;">
+                            <p>d) Ban đầu, các chất phản ứng được lấy với số mol bằng nhau, chưa có sản phẩm sinh ra, khi phản ứng đạt đến trạng thái cân bằng thì $\%$ số mol $\ce{C2H5OH}$ bị ester hóa là $66,67\%$.</p>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="flex:1"><input type="radio" name="tf_d" value="Đ"> Đúng</label>
+                                <label style="flex:1"><input type="radio" name="tf_d" value="S"> Sai</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTF(this)">Chấm điểm</button>
+                    <div class="feedback"></div>
+                </div>
+
+            </section>
+        </main>
+
+        <aside class="sidebar" style="flex: 1; min-width: 250px;">
+            <h3 style="text-transform: uppercase;">Danh mục Thí nghiệm</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><strong>👉 1. Phản ứng Ester hóa</strong></li>
+                <li><a href="experiment2.html">2. Phản ứng Nitro hóa</a></li>
+                <li><a href="experiment3.html">3. Chuẩn độ Fe2+ bằng KMnO4</a></li>
+                <li><a href="experiment4.html">4. Phản ứng Tráng bạc</a></li>
+                <li><a href="experiment5.html">5. Điện phân dung dịch NaCl</a></li>
+            </ul>
+        </aside>
+    </div>
+
+<!-- PHẦN FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cấu trúc chung cho tính năng chấm điểm 2 chiều
+        function handleFeedback(container, isCorrect, correctAnswer = "") {
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            const feedback = container.querySelector('.feedback');
+            
+            // Đếm số lần trả lời
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🎉 <strong>Tuyệt vời! Kết quả chính xác.</strong><br><div class="explain-box">📖 <strong>Giải thích:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `🤔 <strong>Chưa đúng rồi!</strong> Bạn hãy xem qua gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    // Trả lời sai lần 2 sẽ show luôn đáp án và giải thích
+                    let answerText = correctAnswer ? ` Đáp án đúng là <strong>${correctAnswer}</strong>.` : "";
+                    feedback.innerHTML = `🥲 <strong>Vẫn chưa đúng.</strong>${answerText}<br><div class="explain-box">📖 <strong>Cùng xem giải thích nhé:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+
+        function checkMCQ(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer');
+            const selected = container.querySelector('input[type="radio"]:checked');
+            const feedback = container.querySelector('.feedback');
+
+            if (!selected) {
+                feedback.innerHTML = "⚠️ Vui lòng chọn một đáp án trước khi kiểm tra!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            handleFeedback(container, selected.value === correctAnswer, correctAnswer);
+        }
+
+        function checkShort(btn) {
+            const container = btn.parentElement;
+            const correctAnswer = container.getAttribute('data-answer').toLowerCase().trim();
+            const input = container.querySelector('.short-answer-input').value.toLowerCase().trim();
+            const feedback = container.querySelector('.feedback');
+
+            if (input === "") {
+                feedback.innerHTML = "⚠️ Vui lòng nhập câu trả lời!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (input === correctAnswer || input.replace(',', '.') === correctAnswer.replace(',', '.'));
+            handleFeedback(container, isCorrect, correctAnswer);
+        }
+
+        function checkTF(btn) {
+            const container = btn.parentElement;
+            const correctAnswers = container.getAttribute('data-answer').split(',');
+            const radioGroups = [...new Set(Array.from(container.querySelectorAll('input[type="radio"]')).map(el => el.name))];
+            const feedback = container.querySelector('.feedback');
+            
+            let score = 0;
+            let allAnswered = true;
+
+            radioGroups.forEach((groupName, index) => {
+                const selected = container.querySelector(`input[name="${groupName}"]:checked`);
+                if (!selected) allAnswered = false;
+                else if (selected.value === correctAnswers[index]) score++;
+            });
+
+            if (!allAnswered) {
+                feedback.innerHTML = "⚠️ Vui lòng hoàn thành toàn bộ các ý (a, b, c, d) trước khi chấm điểm!";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+
+            const isCorrect = (score === correctAnswers.length);
+            
+            // Xử lý logic hiển thị riêng cho câu Đúng/Sai vì có nhiều đáp án
+            const hint = container.getAttribute('data-hint');
+            const explain = container.getAttribute('data-explain');
+            let attempts = parseInt(container.getAttribute('data-attempts') || '0');
+            
+            if (isCorrect) {
+                feedback.innerHTML = `🏆 <strong>Xuất sắc! Bạn trả lời đúng toàn bộ ${score}/${correctAnswers.length} ý.</strong><br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                feedback.className = "feedback correct";
+            } else {
+                attempts++;
+                container.setAttribute('data-attempts', attempts);
+                
+                if (attempts === 1) {
+                    feedback.innerHTML = `⚠️ <strong>Bạn mới đúng ${score}/${correctAnswers.length} ý.</strong> Cùng kiểm tra lại bằng gợi ý này nhé:<br><div class="hint-box">💡 <strong>Gợi ý:</strong> ${hint}</div>`;
+                    feedback.className = "feedback incorrect";
+                } else {
+                    feedback.innerHTML = `🥲 <strong>Bạn trả lời đúng ${score}/${correctAnswers.length} ý.</strong> Đáp án chuẩn là: <strong>${correctAnswers.join(' - ')}</strong>.<br><div class="explain-box">📖 <strong>Giải thích chi tiết:</strong> ${explain}</div>`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

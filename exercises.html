@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập</title>
+    <!-- File CSS chung -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* =========================================================
+           TÙY CHỈNH HERO BANNER (Dựa trên thiết kế chuẩn)
+           ========================================================= */
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(30, 60, 114, 0.15);
+        }
+        .page-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+        }
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        /* Thanh tìm kiếm hiện đại */
+        .search-bar-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .search-input {
+            width: 100%;
+            max-width: 450px;
+            padding: 14px 25px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            border: 2px solid #ff9f43;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .search-btn {
+            background-color: #ff9f43;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 159, 67, 0.3);
+            transition: all 0.3s ease;
+        }
+        .search-btn:hover {
+            background-color: #ff8f20;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 159, 67, 0.4);
+        }
+
+        /* =========================================================
+           HỆ THỐNG DANH MỤC (CARD BO GÓC)
+           ========================================================= */
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .exercise-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+            border: 1px solid #f1f2f6;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(42, 82, 152, 0.12);
+            border-color: #3498db;
+        }
+
+        .card-banner {
+            height: 120px;
+            background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 3px solid #f1f2f6;
+        }
+
+        .card-banner.chem-1 { background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%); }
+        .card-banner.chem-2 { background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%); }
+        .card-banner.chem-3 { background: linear-gradient(135deg, #55efc4 0%, #00b894 100%); }
+        .card-banner.chem-4 { background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            color: #57606f;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background-color: #f1f2f6;
+            color: #2f3542;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .meta-tag.hot { background-color: #ff7675; color: white; }
+        .meta-tag.new { background-color: #00cec9; color: white; }
+
+        .btn-start {
+            display: inline-block;
+            text-align: center;
+            background-color: #2a5298;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn-start:hover {
+            background-color: #1e3c72;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <h1 class="logo">ChemJoy THPT</h1>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="experiments.html">Thí nghiệm</a></li>
+                <li><a href="exercises.html">Bài tập</a></li>
+                <li><a href="symbols.html">Ký hiệu</a></li>
+                <li><a href="periodic.html">Bảng tuần hoàn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        
+        <!-- HERO BANNER -->
+        <section class="page-header">
+            <div class="header-content">
+                <h2>BÀI TẬP</h2>
+                <p>Tiếp cận cấu trúc mới nhất của đề thi Tốt nghiệp THPT. Bẻ gãy các vấn đề phức tạp thành các bước tư duy nhỏ, liên kết chặt chẽ với bối cảnh thực tiễn công nghiệp, y tế và đời sống.</p>
+            </div>
+            
+            <div class="search-bar-container">
+                <input type="text" placeholder="Tìm kiếm bài tập ..." class="search-input">
+                <button class="search-btn">Tìm kiếm</button>
+            </div>
+        </section>
+
+        <!-- DANH MỤC BÀI TẬP (GRID CARDS) -->
+
+        <section class="exercise-grid">
+            
+            <!-- Thẻ bài tập 1 -->
+            <article class="exercise-card">
+                <div class="card-banner chem-1">🧪</div>
+                <div class="card-content">
+                    <h3 class="card-title">Hàm lượng sắt trong nước sinh hoạt</h3>
+                    <p class="card-desc">Trích đề cương ôn tập kiểm tra học kỳ II, năm học 2025-2026, Trường THPT Nguyễn Việt Hồng, Cần Thơ</p>
+                    <div class="card-meta">
+                        <span class="meta-tag hot">Đề cương ôn tập</span>
+                        <span class="meta-tag">Trả lời ngắn</span>
+                        <span class="meta-tag">Tổng hợp</span>
+                    </div>
+                    <!-- Dẫn link tới file bài tập chi tiết -->
+                    <a href="exercise-1.html" class="btn-start">Vào luyện tập ngay</a>
+                </div>
+            </article>
+
+            
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>ChemJoy THPT</h4>
+                <p>Nền tảng học Hóa học tiên phong: Quan sát thực tế - Tư duy nhạy bén - Khơi nguồn đam mê khối Khoa học Tự nhiên.</p>
+            </div>
+            <div class="footer-column">
+                <h4>HỆ THỐNG CHỨC NĂNG</h4>
+                <ul>
+                    <li><a href="experiments.html">Kho video thí nghiệm</a></li>
+                    <li><a href="exercises.html">Hệ thống bài tập thực tế</a></li>
+                    <li><a href="symbols.html">Tra cứu ký hiệu IUPAC</a></li>
+                    <li><a href="periodic.html">Bảng tuần hoàn các nguyên tố hóa học</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>LIÊN HỆ VÀ HỖ TRỢ</h4>
+                <p>Góp ý và hợp tác phát triển nội dung giáo dục STEM:</p>
+                <ul>
+                    <li><a href="#">Email: chemjoythptnvh2026@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChemJoy THPT. Lan tỏa cảm hứng Khoa học Tự nhiên theo định hướng GDPT 2018.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
